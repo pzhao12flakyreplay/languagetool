@@ -3901,28 +3901,6 @@ Copyright (C) 2012 Jaume Ortolà i Font
         </pattern>
         <disambig action="remove" postag="V.P.*"/>
     </rule>
-    <rule id="TRAVAR_TRAVESSAR" name="travar/travessar">
-        <pattern>
-            <marker>
-                <and>
-                    <token inflected="yes">travessar</token>
-                    <token inflected="yes">travar</token>
-                </and>
-            </marker>
-        </pattern>
-        <disambig action="remove"><wd lemma="travar"/></disambig>
-    </rule>
-    <rule id="HUMIT" name="humit">
-        <pattern>
-            <marker>
-                <and>
-                    <token regexp="yes">humit|humida|humits|humides</token>
-                    <token inflected="yes">humir</token>
-                </and>
-            </marker>
-        </pattern>
-        <disambig action="remove"><wd lemma="humir"/></disambig>
-    </rule>
     <rulegroup id="AIGUA" name="aigua (aiguar?)">
         <rule>
             <pattern>
@@ -10919,13 +10897,12 @@ Copyright (C) 2012 Jaume Ortolà i Font
     <rule id="GRANS" name="grans de cereals...">
         <pattern>
             <marker>
-                <token postag="NC.*" postag_regexp="yes">grans<exception scope="previous" postag="NC.P.*" postag_regexp="yes"/></token>
+                <token postag="NC.*" postag_regexp="yes">grans</token>
             </marker>
             <token regexp="yes">de|d'</token>
             <token postag="NC.*" postag_regexp="yes"/>
         </pattern>
         <disambig action="filter" postag="N.*"/>
-        <example type="untouched">Són fragments grans de membrana.</example>
     </rule>
     <rulegroup id="DEU" name="no és numeral si no ha concordat...">
         <rule>

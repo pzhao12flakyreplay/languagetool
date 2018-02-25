@@ -4,5 +4,3 @@ Lingvoilon
 videkunveno
 telekunveno
 dank
-gufujo
-mojosa

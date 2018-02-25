@@ -178,7 +178,7 @@ public class English extends Language implements AutoCloseable {
         new MultipleWhitespaceRule(messages, this),
         new LongSentenceRule(messages),
         new SentenceWhitespaceRule(messages),
-        //new OpenNMTRule(),     // commented out because of #903
+        new OpenNMTRule(),
         new WhiteSpaceBeforeParagraphEnd(messages),
         new WhiteSpaceAtBeginOfParagraph(messages),
         new EmptyLineRule(messages),

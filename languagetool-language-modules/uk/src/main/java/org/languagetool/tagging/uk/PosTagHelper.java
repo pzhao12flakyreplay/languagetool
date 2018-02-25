@@ -1,6 +1,5 @@
 package org.languagetool.tagging.uk;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -10,7 +9,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.languagetool.AnalyzedToken;
 import org.languagetool.AnalyzedTokenReadings;
@@ -28,7 +26,6 @@ public final class PosTagHelper {
   public static final Map<String, String> GENDER_MAP;
   public static final List<String> BASE_GENDERS = Arrays.asList("m", "f", "n", "p");
   public static final Map<String, String> PERSON_MAP;
-  public static final String NO_VIDMINOK_SUBSTR = ":nv";
 
   static {
     Map<String, String> map = new LinkedHashMap<>();
@@ -175,25 +172,6 @@ public final class PosTagHelper {
     }
 
     return sb.toString();
-  }
-
-  @NotNull
-  public static List<AnalyzedToken> generateTokensForNv(String word, String gender, String extraTags) {
-    String posTagBase = "noun:inanim:" + gender + ":";
-  
-    List<AnalyzedToken> newAnalyzedTokens = new ArrayList<>();
-    for(String vidm: VIDMINKY_MAP.keySet()) {
-      if( vidm.equals("v_kly") )
-        continue;
-  
-      String posTag = posTagBase + vidm + PosTagHelper.NO_VIDMINOK_SUBSTR;
-      if( extraTags != null ) {
-        posTag += extraTags;
-      }
-      newAnalyzedTokens.add(new AnalyzedToken(word, posTag, word));
-    }
-    
-    return newAnalyzedTokens;
   }
 
 //private static String getNumAndConj(String posTag) {

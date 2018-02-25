@@ -3,8 +3,7 @@
 <?xml-stylesheet type="text/css" href="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.css" title="Easy editing stylesheet" ?>
 <!--
 Dutch grammar, typo and style rules for LanguageTool
-Copyright (C) 2006-2018 (baarsrj@xs4all.nl)
-Copyright (C) 2018 Robin van der Vliet (info@robinvandervliet.com)
+Copyright (C) 2006,2007,2008, 2009, 2010, 2011 R. J. Baars (baarsrj@xs4all.nl)
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -32,11 +31,11 @@ Contributions and ideas from:
 ================================
 SPECIAL NOTICE:
 Every rule is within a rule group; this makes the structure a stricter tree; this is for easier processing programmatically.
-This is also useful for most multi word rules, because of 'inversion' of the sentence.
+This is also useful for most multi word rules, because of 'inversion'of the sentence.
 ================================
 -->
 <!--
-opzoeken overeenkomende vorm:
+opzoeken overeenkomende vorm: 
 <match no="1" postag="WKW.*" postag_regexp="yes">
 <match no="1" postag=".*ZNW.*" postag_regexp="yes">
 <match no="1" postag="BNW.*" postag_regexp="yes">
@@ -44,7 +43,7 @@ opzoeken overeenkomende vorm:
 regexp case-insensitive maken : (?i)
 
 -->
-<!-- MOGELIJKE REGELS
+<!-- MOGELIJKE REGELS 
 
 -->
 <!-- mogelijk ook te gebruiken!
@@ -60,8 +59,6 @@ regexp case-insensitive maken : (?i)
 <!ENTITY abbrevWeekdays "ma|di|wo|do|za|zo">
 <!ENTITY months "januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december">
 <!ENTITY abbrevMonths "jan|feb|(maa|mar|mrt)|apr|jun|jul|aug|sep|oct|nov|dec">
-<!-- definieer macro voor gespelde afkortingen als cd -->
-<!ENTITY gespeld "abc|adv|aed|apk|b2b|bh|bhv|bso|btw|bv|cao|cd|cfk|ckv|cv|dc|dj|dtp|dvd|fte|gft|ggo|ggz|gm|gmo|gps|gsm|hbo|hd|hiv|hr|hrm|hst|ic|ivf|kmo|lcd|lp|lpg|lsd|mbo|mdf|mkb|mms|msn|mt|ngo|nv|ob|ov|ozb|p2p|pc|pcb|pdf|pk|pps|pr|pvc|roc|rvs|sms|tbc|tbs|tl|tv|uv|vbo|vj|vmbo|vsbo|vwo|wc|wo|xtc|zzp">
 ]>
 <rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="nl" xsi:noNamespaceSchemaLocation="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.xsd">
 	<!--
@@ -86,7 +83,7 @@ regexp case-insensitive maken : (?i)
 	<category id="STYLE" name="Stijlaspecten die niet in de andere categorieën worden afgehandeld.">
 	</category>
 	-->
-	<category id="SEMANTICS" name="Aandachtspunten in de betekenis en consistentie." >
+	<category id="SEMANTICS" name="Aandachtspunten in de betekenis en consistentie." default="off">
 		
 		<rulegroup id="DATE_WEEKDAY" name="Dag komt niet overeen met datum">
 			<rule>
@@ -217,7 +214,7 @@ regexp case-insensitive maken : (?i)
 		<rulegroup id="ALLEEN_BE" name="Alleen gebruikelijk in België">
 			<rule>
 				<pattern>
-					<token regexp='yes'>.{5,}kost</token>
+					<token regexp='yes'>.{5,}kost</token> 
 				</pattern>
 				<message>Standaardtaal is <suggestion>\1en</suggestion>.</message>
 				<url>http://taaladvies.net/taal/advies/vraag/474/</url>
@@ -226,7 +223,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 			<rule>
 				<pattern>
-					<token regexp='yes'>droogkuis|nieuwkuis</token>
+					<token regexp='yes'>droogkuis|nieuwkuis</token> 
 				</pattern>
 				<message>Standaardtaal voor dit woord is <suggestion>stomerij</suggestion>.</message>
 				<url>http://taaladvies.net/taal/advies/vraag/225/droogkuis_nieuwkuis_stomerij/</url>
@@ -305,7 +302,7 @@ regexp case-insensitive maken : (?i)
 				<pattern>
 					<token inflected="yes">modaliteit</token>
 				</pattern>
-				<message>Standaardtaal voor dit woord is <suggestion><match no="1" postag="ZNW.*" postag_regexp="yes">bepaling</match></suggestion>, <suggestion><match no="1" postag="ZNW.*" postag_regexp="yes">voorwaarde</match></suggestion> of <suggestion><match no="1" postag="ZNW.*" postag_regexp="yes">regeling</match></suggestion></message>
+				<message>Standaardtaal voor dit woord is <suggestion><match no="1" postag="ZNW.*" postag_regexp="yes">bepaling</match></suggestion>, <suggestion><match no="1" postag="ZNW.*" postag_regexp="yes">voorwaarde</match></suggestion> of  <suggestion><match no="1" postag="ZNW.*" postag_regexp="yes">regeling</match></suggestion></message> 
 				<url>http://taaladvies.net/taal/advies/vraag/1701/modaliteiten_voorwaarden/</url>
 				<example correction="bepaling|voorwaarde|regeling">Het contract heeft een bijzondere <marker>modaliteit</marker>.</example>
 				<example>Ik ken de <marker>voorwaarden</marker> niet.</example>
@@ -443,9 +440,9 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">^\P{M}{20,29}$</token>
 				</pattern>
 				<message>Lange woorden kunnen een tekst lastig maken. Kan het niet eenvoudiger?</message>
-				<example type="incorrect">Ander woord voor <marker>beleggingsdekkingswaarde</marker>.</example>
+				<example type="incorrect"><marker>krokodillentranendal</marker>.</example>
 			</rule>
-		</rulegroup>
+		</rulegroup>		
 		<rulegroup id="ERG_LANG_WOORD" name="Lang woord">
 			<rule>
 				<pattern>
@@ -454,7 +451,7 @@ regexp case-insensitive maken : (?i)
 				<message>Lange woorden kunnen een tekst lastig maken. Kan het niet eenvoudiger?</message>
 				<example type="incorrect"><marker>krokodillentranendalengevaltestje</marker>.</example>
 			</rule>
-		</rulegroup>
+		</rulegroup>		
 		<rulegroup id="MEER_DAN_18_WOORDEN" name="Lange zin, mogelijk lastig leesbaar" default="off">
 			<rule>
 				<!-- TaalTik 2014-09-12 -->
@@ -609,7 +606,7 @@ regexp case-insensitive maken : (?i)
 					<token>Keira</token>
 					<token regexp="yes">Knight?e?le?y?<exception>Knightley</exception></token>
 				</pattern>
-				<message>Schrijf <suggestion>Keira Knightley</suggestion> als het gaat om de actrice uit Groot-Brittannië.</message>
+				<message>Schrijf <suggestion>Keira Knightley</suggestion> Als het gaat om de actrice uit Groot-Brittannië.</message>
 				<url>https://nl.wikipedia.org/wiki/Keira_Knightley</url>
 				<example correction="Keira Knightley">Kent u <marker>Keira Knightly</marker>?</example>
 				<example>Kent u Keira Knightley?</example>
@@ -619,7 +616,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Kie?ra</token>
 					<token regexp="yes">Knight?le?y?</token>
 				</pattern>
-				<message>Schrijf <suggestion>Keira Knightley</suggestion> als het gaat om de actrice uit Groot-Brittannië.</message>
+				<message>Schrijf <suggestion>Keira Knightley</suggestion> Als het gaat om de actrice uit Groot-Brittannië.</message>
 				<url>https://nl.wikipedia.org/wiki/Keira_Knightley</url>
 				<example correction="Keira Knightley">Kent u <marker>Kiera Knightley</marker>?</example>
 				<example>Kent u Keira Knightley?</example>
@@ -633,7 +630,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">D[eé]bb?o?rr?h?ah?</token>
 					<token regexp="yes">Wingg?er</token>
 				</pattern>
-				<message>Schrijf <suggestion>Debra Winger</suggestion> als het gaat om de actrice uit Amerika.</message>
+				<message>Schrijf <suggestion>Debra Winger</suggestion> Als het gaat om de actrice uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Debra_Winger</url>
 				<example correction="Debra Winger">Kent u <marker>Debora Winger</marker>?</example>
 				<example>Kent u Debra Winger?</example>
@@ -643,7 +640,7 @@ regexp case-insensitive maken : (?i)
 					<token>Steve</token>
 					<token regexp="yes">Carr?ell?<exception>Carell</exception></token>
 				</pattern>
-				<message>Schrijf <suggestion>Steve Carell</suggestion> als het gaat om de acteur uit Amerika.</message>
+				<message>Schrijf <suggestion>Steve Carell</suggestion> Als het gaat om de acteur uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Steve_Carell</url>
 				<example correction="Steve Carell">Kent u <marker>Steve Carrell</marker>?</example>
 				<example>Kent u Steve Carell?</example>
@@ -653,7 +650,7 @@ regexp case-insensitive maken : (?i)
 					<token>Will</token>
 					<token regexp="yes">Ferr?ell?<exception>Ferrell</exception></token>
 				</pattern>
-				<message>Schrijf <suggestion>Will Ferrell</suggestion> als het gaat om de acteur uit Amerika.</message>
+				<message>Schrijf <suggestion>Will Ferrell</suggestion> Als het gaat om de acteur uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Will_Ferrell</url>
 				<example correction="Will Ferrell">Kent u <marker>Will Ferrel</marker>?</example>
 				<example>Kent u Will Ferrell?</example>
@@ -697,7 +694,7 @@ regexp case-insensitive maken : (?i)
 					<token>Rose</token>
 				</antipattern>
 				<pattern>
-					<token regexp="yes">Axle?|Axel</token>
+					<token regexp="yes">Axle?</token>
 					<token regexp="yes">Roses?</token>
 				</pattern>
 				<message>Schrijf <suggestion>Axl Rose</suggestion> als het gaat om de zanger van Guns N' Roses.</message>
@@ -737,13 +734,11 @@ regexp case-insensitive maken : (?i)
 			<rule>
 				<pattern>
 					<token>Justin</token>
-					<token regexp="yes">Be?iber</token>
+					<token>Beiber</token>
 				</pattern>
 				<message>Schrijf <suggestion>Justin Bieber</suggestion> als het gaat om de zanger uit Canada.</message>
 				<url>https://nl.wikipedia.org/wiki/Justin_Bieber</url>
 				<example correction="Justin Bieber">Kent u <marker>Justin Beiber</marker>?</example>
-				<example correction="Justin Bieber">Kent u <marker>Justin Biber</marker>?</example>
-				<example>Kent u Justin Bieber?</example>
 			</rule>
 			<rule>
 				<pattern>
@@ -908,7 +903,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Ste(ff?|ph)e?[iy]<exception>Steffi</exception></token>
 					<token>Graf</token>
 				</pattern>
-				<message>Schrijf <suggestion>Steffi Graf</suggestion> als het gaat om de tennisster.</message>
+				<message>Schrijf <suggestion>Steffi Graf</suggestion> Als het gaat om de tennisster.</message>
 				<url>https://nl.wikipedia.org/wiki/Steffi_Graf</url>
 				<example correction="Steffi Graf">Kent u <marker>Stefi Graf</marker>?</example>
 				<example>Kent u Steffi Graf?</example>
@@ -1010,7 +1005,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Al[ae]n|Allen</token>
 					<token regexp="yes">Poe?</token>
 				</pattern>
-				<message>Schrijf <suggestion>Edgar Allan Poe</suggestion> als het gaat om de schrijver uit Amerika.</message>
+				<message>Schrijf <suggestion>Edgar Allan Poe</suggestion> Als het gaat om de schrijver uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Edgar_Allan_Poe</url>
 				<example correction="Edgar Allan Poe">Kent u <marker>Edgar Alan Poe</marker>?</example>
 				<example>Kent u Edgar Allan Poe?</example>
@@ -1020,7 +1015,7 @@ regexp case-insensitive maken : (?i)
 					<token>Charlotte</token>
 					<token>Bronte</token>
 				</pattern>
-				<message>Schrijf <suggestion>Charlotte Brontë</suggestion> als het gaat om de auteur uit Groot-Brittannië.</message>
+				<message>Schrijf <suggestion>Charlotte Brontë</suggestion> Als het gaat om de auteur uit Groot-Brittannië.</message>
 				<url>https://nl.wikipedia.org/wiki/Charlotte_Bront%C3%AB</url>
 				<example correction="Charlotte Brontë">Kent u <marker>Charlotte Bronte</marker>?</example>
 				<example>Kent u Charlotte Brontë?</example>
@@ -1030,7 +1025,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">St[eé](f|ph)[ea]nie?<exception>Stephenie</exception></token>
 					<token>Meyer</token>
 				</pattern>
-				<message>Schrijf <suggestion>Stephenie Meyer</suggestion> als het gaat om de auteur uit Amerika.</message>
+				<message>Schrijf <suggestion>Stephenie Meyer</suggestion> Als het gaat om de auteur uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Stephenie_Meyer</url>
 				<example correction="Stephenie Meyer">Kent u <marker>Stephanie Meyer</marker>?</example>
 				<example>Kent u Stephenie Meyer?</example>
@@ -1040,7 +1035,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Jonath?an</token>
 					<token>Fransen</token>
 				</pattern>
-				<message>Schrijf <suggestion>Jonathan Franzen</suggestion> als het gaat om de auteur uit Amerika.</message>
+				<message>Schrijf <suggestion>Jonathan Franzen</suggestion> Als het gaat om de auteur uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Jonathan_Franzen</url>
 				<example correction="Jonathan Franzen">Kent u <marker>Jonathan Fransen</marker>?</example>
 				<example>Kent u Jonathan Franzen?</example>
@@ -1050,7 +1045,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">J[eo]?ane?</token>
 					<token>Austin</token>
 				</pattern>
-				<message>Schrijf <suggestion>Jane Austen</suggestion> als het gaat om de schrijfster uit Groot-Brittannië.</message>
+				<message>Schrijf <suggestion>Jane Austen</suggestion> Als het gaat om de schrijfster uit Groot-Brittannië.</message>
 				<url>https://nl.wikipedia.org/wiki/Jane_Austen</url>
 				<example correction="Jane Austen">Kent u <marker>Jane Austin</marker>?</example>
 				<example>Kent u Jane Austen?</example>
@@ -1078,7 +1073,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Warr?en?</token>
 					<token regexp="yes">Buff?ett?</token>
 				</pattern>
-				<message>Schrijf <suggestion>Warren Buffett</suggestion> als het gaat om de zakenman uit Amerika.</message>
+				<message>Schrijf <suggestion>Warren Buffett</suggestion> Als het gaat om de zakenman uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Warren_Buffett</url>
 				<example correction="Warren Buffett">Kent u <marker>Warren Buffet</marker>?</example>
 				<example correction="Warren Buffett">Kent u <marker>Waren Buffett</marker>?</example>
@@ -1098,7 +1093,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Nich?olas?<exception>Nicolas</exception></token>
 					<token>Cage</token>
 				</pattern>
-				<message>Schrijf <suggestion>Nicolas Cage</suggestion> als het gaat om de acteur uit Amerika.</message>
+				<message>Schrijf <suggestion>Nicolas Cage</suggestion> Als het gaat om de acteur uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Nicolas_Cage</url>
 				<example correction="Nicolas Cage">Kent u <marker>Nicholas Cage</marker>?</example>
 				<example>Kent u Nicolas Cage?</example>
@@ -1108,7 +1103,7 @@ regexp case-insensitive maken : (?i)
 					<token>John</token>
 					<token regexp="yes">Stewar[td]</token>
 				</pattern>
-				<message>Schrijf <suggestion>Jon Stewart</suggestion> als het gaat om de komiek uit Amerika.</message>
+				<message>Schrijf <suggestion>Jon Stewart</suggestion> Als het gaat om de komiek uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Jon_Stewart</url>
 				<example correction="Jon Stewart">Kent u <marker>John Stewart</marker>?</example>
 				<example>Kent u Jon Stewart?</example>
@@ -1131,7 +1126,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Barr?ac?[ck]</token>
 					<token regexp="yes">Obb?amm?a</token>
 				</pattern>
-				<message>Schrijf <suggestion>Barack Obama</suggestion> als het gaat om de 44e president van de Verenigde Staten.</message>
+				<message>Schrijf <suggestion>Barack Obama</suggestion> als het gaat om de président van de Verenigde Staten.</message>
 				<url>https://nl.wikipedia.org/wiki/Barack_Obama</url>
 				<example correction="Barack Obama">Kent u <marker>Barak Obama</marker>?</example>
 				<example correction="Barack Obama">Kent u <marker>Barack Obbama</marker>?</example>
@@ -1146,7 +1141,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">S[ae]lma</token>
 					<token regexp="yes">Ha[yj][ae]c?k</token>
 				</pattern>
-				<message>Schrijf <suggestion>Salma Hayek</suggestion> als het gaat om de actrice uit Mexico.</message>
+				<message>Schrijf <suggestion>Salma Hayek</suggestion> de actrice mexico-uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Salma_Hayek</url>
 				<example correction="Salma Hayek">Kent u <marker>Selma Hayek</marker>?</example>
 				<example correction="Salma Hayek">Kent u <marker>Salma Hayeck</marker>?</example>
@@ -1181,7 +1176,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Bj?arne?s?</token>
 					<token regexp="yes">St?ro?o??u?r?ss?t?tr?o?o?u?pp?</token>
 				</pattern>
-				<message>Schrijf <suggestion>Bjarne Stroustrup</suggestion> als het gaat om de auteur van de taal C++.</message>
+				<message>Schrijf <suggestion>Bjarne Stroustrup</suggestion> Als het gaat om de auteur van de taal c++.</message>
 				<url>https://nl.wikipedia.org/wiki/Bjarne_Stroustrup</url>
 				<example correction="Bjarne Stroustrup">Kent u <marker>Bjarne Stroustroup</marker>?</example>
 				<example correction="Bjarne Stroustrup">Kent u <marker>Bjarnes Stroustrup</marker>?</example>
@@ -1216,7 +1211,7 @@ regexp case-insensitive maken : (?i)
 					<token>Bram</token>
 					<token regexp="yes">Moo?u?ll?enaa?re?<exception>Moolenaar</exception></token>
 				</pattern>
-				<message>Schrijf <suggestion>Bram Moolenaar</suggestion> als het gaat om de auteur van Vim.</message>
+				<message>Schrijf <suggestion>Bram Moolenaar</suggestion> Als het gaat om de auteur van Vim.</message>
 				<url>https://en.wikipedia.org/wiki/Bram_Moolenaar</url>
 				<example correction="Bram Moolenaar">Kent u <marker>Bram Moolenar</marker>?</example>
 				<example>Kent u Bram Moolenaar?</example>
@@ -1306,6 +1301,7 @@ regexp case-insensitive maken : (?i)
 				<example correction="François Hollande">Kent u <marker>Francois Hollande</marker>?</example>
 				<example>Kent u François Hollande?</example>
 			</rule>
+			
 			<rule>
 				<antipattern>
 					<token>Liliane</token>
@@ -1321,6 +1317,7 @@ regexp case-insensitive maken : (?i)
 				<example correction="Liliane Bettencourt">Kent u <marker>Liliane Betencourt</marker>?</example>
 				<example>Kent u Liliane Bettencourt?</example>
 			</rule>
+			
 			<rule>
 				<antipattern>
 					<token>Ingrid</token>
@@ -1409,7 +1406,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Whoo?pie?</token>
 					<token regexp="yes">Gold?berg</token>
 				</pattern>
-				<message>Schrijf <suggestion>Whoopi Goldberg</suggestion> als het gaat om de actrice uit Amerika.</message>
+				<message>Schrijf <suggestion>Whoopi Goldberg</suggestion> Als het gaat om de actrice uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Whoopi_Goldberg</url>
 				<example correction="Whoopi Goldberg">Kent u <marker>Whoopie Goldberg</marker>?</example>
 				<example>Kent u Whoopi Goldberg?</example>
@@ -1419,7 +1416,7 @@ regexp case-insensitive maken : (?i)
 					<token>Jennifer</token>
 					<token>Anniston</token>
 				</pattern>
-				<message>Schrijf <suggestion>Jennifer Aniston</suggestion> als het gaat om de actrice uit Amerika.</message>
+				<message>Schrijf <suggestion>Jennifer Aniston</suggestion> Als het gaat om de actrice uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Jennifer_Aniston</url>
 				<example correction="Jennifer Aniston">Kent u <marker>Jennifer Anniston</marker>?</example>
 				<example>Kent u Jennifer Aniston?</example>
@@ -1429,7 +1426,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Co?u?rte?ney<exception>Courteney</exception></token>
 					<token>Cox</token>
 				</pattern>
-				<message>Schrijf <suggestion>Courteney Cox</suggestion> als het gaat om de actrice uit Amerika.</message>
+				<message>Schrijf <suggestion>Courteney Cox</suggestion> Als het gaat om de actrice uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Courteney_Cox</url>
 				<example correction="Courteney Cox">Kent u <marker>Courtney Cox</marker>?</example>
 				<example>Kent u Courteney Cox?</example>
@@ -1443,7 +1440,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">All?[iy]ss?a</token>
 					<token regexp="yes">Mill?ann?o</token>
 				</pattern>
-				<message>Schrijf <suggestion>Alyssa Milano</suggestion> als het gaat om de actrice uit Amerika.</message>
+				<message>Schrijf <suggestion>Alyssa Milano</suggestion> Als het gaat om de actrice uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Alyssa_Milano</url>
 				<example correction="Alyssa Milano">Kent u <marker>Alissa Milano</marker>?</example>
 				<example correction="Alyssa Milano">Kent u <marker>Alyssa Milanno</marker>?</example>
@@ -1454,7 +1451,7 @@ regexp case-insensitive maken : (?i)
 					<token>Lisa</token>
 					<token regexp="yes">Minn?ell?i</token>
 				</pattern>
-				<message>Schrijf <suggestion>Liza Minnelli</suggestion> als het gaat om de actrice uit Amerika.</message>
+				<message>Schrijf <suggestion>Liza Minnelli</suggestion> Als het gaat om de actrice uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Liza_Minnelli</url>
 				<example correction="Liza Minnelli">Kent u <marker>Lisa Minnelli</marker>?</example>
 				<example>Kent u Liza Minnelli?</example>
@@ -1464,7 +1461,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Bro[ou]ke?</token>
 					<token>Shield</token>
 				</pattern>
-				<message>Schrijf <suggestion>Brooke Shields</suggestion> als het gaat om de actrice uit Amerika.</message>
+				<message>Schrijf <suggestion>Brooke Shields</suggestion> Als het gaat om de actrice uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Brooke_Shields</url>
 				<example correction="Brooke Shields">Kent u <marker>Brooke Shield</marker>?</example>
 				<example>Kent u Brooke Shields?</example>
@@ -1474,7 +1471,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">J[uo]dd?[iy]e?<exception>Jodie</exception></token>
 					<token>Foster</token>
 				</pattern>
-				<message>Schrijf <suggestion>Jodie Foster</suggestion> als het gaat om de actrice uit Amerika.</message>
+				<message>Schrijf <suggestion>Jodie Foster</suggestion> Als het gaat om de actrice uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Jodie_Foster</url>
 				<example correction="Jodie Foster">Kent u <marker>Joddie Foster</marker>?</example>
 				<example>Kent u Jodie Foster?</example>
@@ -1488,7 +1485,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">All?an</token>
 					<token regexp="yes">Stivell?</token>
 				</pattern>
-				<message>Schrijf <suggestion>Alan Stivell</suggestion> als het gaat om de Bretonse musicus.</message>
+				<message>Schrijf <suggestion>Alan Stivell</suggestion> als het gaat om de musicus breton.</message>
 				<url>https://nl.wikipedia.org/wiki/Alan_Stivell</url>
 				<example correction="Alan Stivell">Kent u <marker>Allan Stivell</marker>?</example>
 				<example correction="Alan Stivell">Kent u <marker>Alan Stivel</marker>?</example>
@@ -1499,7 +1496,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Glenn?</token>
 					<token>Mor</token>
 				</pattern>
-				<message>Schrijf <suggestion>Glenmor</suggestion> als het gaat om de Bretonse musicus.</message>
+				<message>Schrijf <suggestion>Glenmor</suggestion> als het gaat om de musicus breton.</message>
 				<url>https://en.wikipedia.org/wiki/Glenmor</url>
 				<example correction="Glenmor">Kent u <marker>Glenn Mor</marker>?</example>
 				<example>Kent u Glenmor?</example>
@@ -1508,7 +1505,7 @@ regexp case-insensitive maken : (?i)
 				<pattern>
 					<token regexp="yes">Glennmor|Glenn?[-‑‐]mor</token>
 				</pattern>
-				<message>Schrijf <suggestion>Glenmor</suggestion> als het gaat om de Bretonse musicus.</message>
+				<message>Schrijf <suggestion>Glenmor</suggestion> als het gaat om de musicus breton.</message>
 				<url>https://en.wikipedia.org/wiki/Glenmor</url>
 				<example correction="Glenmor">Kent u <marker>Glennmor</marker>?</example>
 				<example>Kent u Glenmor?</example>
@@ -1518,10 +1515,10 @@ regexp case-insensitive maken : (?i)
 					<token>Bernez</token>
 					<token regexp="yes">Tangu[iy]|Tangy</token>
 				</pattern>
-				<message>Schrijf <suggestion>Bernez Tangi</suggestion> als het gaat om de Bretonse dichter.</message>
+				<message>Schrijf <suggestion>Bernez Tangi</suggestion> als het gaat om de poète breton.</message>
 				<url>https://fr.wikipedia.org/wiki/Bernez_Tangi</url>
-				<example correction="Bernez Tangi">Kent u <marker>Bernez Tanguy</marker>?</example>
-				<example>Kent u Bernez Tangi?</example>
+				<example correction="Bernez Tangi">Kent u <marker>Bernez Tanguy</marker> est un poète en langue bretonne?</example>
+				<example>Kent u Bernez Tangi est un poète en langue bretonne?</example>
 			</rule>
 			<rule>
 				<antipattern>
@@ -1568,7 +1565,7 @@ regexp case-insensitive maken : (?i)
 					<token>Merryl</token>
 					<token>Streep</token>
 				</pattern>
-				<message>Schrijf <suggestion>Meryl Streep</suggestion> als het gaat om de actrice uit Amerika.</message>
+				<message>Schrijf <suggestion>Meryl Streep</suggestion> Als het gaat om de actrice uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Meryl_Streep</url>
 				<example correction="Meryl Streep">Kent u <marker>Merryl Streep</marker>?</example>
 				<example>Kent u Meryl Streep?</example>
@@ -1582,7 +1579,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">C[iy]nd[yi]e?</token>
 					<token regexp="yes">Laupers?</token>
 				</pattern>
-				<message>Schrijf <suggestion>Cyndi Lauper</suggestion> als het gaat om de actrice uit Amerika.</message>
+				<message>Schrijf <suggestion>Cyndi Lauper</suggestion> Als het gaat om de actrice uit Amerika.</message>
 				<url>https://nl.wikipedia.org/wiki/Cyndi_Lauper</url>
 				<example correction="Cyndi Lauper">Kent u <marker>Cyndie Lauper</marker>?</example>
 				<example correction="Cyndi Lauper">Kent u <marker>Cyndi Laupers</marker>?</example>
@@ -1593,7 +1590,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">Albert|dokter</token>
 					<marker><token>Schweizer</token></marker>
 				</pattern>
-				<message>Schrijf <suggestion>Schweitzer</suggestion> als het gaat om de Frans-Duitse arts-filosoof.</message>
+				<message>Schrijf <suggestion>Schweitzer</suggestion> als het gaat om de philosophe/médecin alsacien.</message>
 				<url>https://nl.wikipedia.org/wiki/Albert_Schweitzer</url>
 				<example correction="Schweitzer">Kent u Albert <marker>Schweizer</marker>?</example>
 				<example>Kent u Albert Schweitzer?</example>
@@ -1608,10 +1605,7 @@ regexp case-insensitive maken : (?i)
 				<example>Kent u Mark Zuckerberg?</example>
 			</rule>
 			<rule>
-				<antipattern>
-					<token>Mark</token>
-					<token>Zuckerberg</token>
-				</antipattern>
+				<antipattern><token>Mark</token><token>Zuckerberg</token></antipattern>
 				<pattern>
 					<token regexp="yes">Mar[kc]</token>
 					<token regexp="yes">[ZS]uckerb[eu]rg</token>
@@ -1622,10 +1616,7 @@ regexp case-insensitive maken : (?i)
 				<example>Kent u Mark Zuckerberg?</example>
 			</rule>
 			<rule>
-				<antipattern>
-					<token>Mark</token>
-					<token>Rutte</token>
-				</antipattern>
+				<antipattern><token>Mark</token><token>Rutte</token></antipattern>
 				<pattern>
 					<token regexp="yes">Mar[kc]</token>
 					<token regexp="yes">Rutte|Rutten</token>
@@ -2264,7 +2255,7 @@ regexp case-insensitive maken : (?i)
 		</rulegroup>
 		<rulegroup id="TEGELOVEN" name="tegeloven → te geloven">
 			<rule>
-				<!-- 2017-06-24 TaalTik -->
+				<!--   2017-06-24 TaalTik  -->
 				<pattern>
 					<token negate="yes" regexp="yes">de|een</token>
 					<marker>
@@ -2277,7 +2268,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="TEMEER" name="temeer → te meer">
-			<!-- 2017-06-24 TaalTik -->
+			<!--   2017-06-24 TaalTik  -->
 			<rule>
 				<pattern>
 					<token regexp="yes">eens|des|reden|zoveel</token>
@@ -2285,7 +2276,7 @@ regexp case-insensitive maken : (?i)
 						<token>temeer</token>
 					</marker>
 				</pattern>
-				<message>Hoewel'<match no="1"/> 'vooral ook' betekent, moet hier waarschijnlijk <suggestion>te meer</suggestion> staan.</message>
+				<message>Hoewel'<match no="1"/>  'vooral ook' betekent, moet hier waarschijnlijk <suggestion>te meer</suggestion> staan.</message>
 				<example correction="te meer">Het is eens <marker>temeer</marker> een fout.</example>
 				<example>Het is prima, <marker>temeer</marker> je geen tijd had.</example>
 			</rule>
@@ -2308,14 +2299,14 @@ regexp case-insensitive maken : (?i)
 				<pattern>
 					<token regexp="yes">€[a-z]{4}.*</token>
 				</pattern>
-				<message>Gebruik een koppelteken na een symbool in een samengesteld woord. <suggestion><match no="1" regexp_match="(€)(.*)" regexp_replace="$1-$2"/></suggestion> Of voeg een spatie toe <suggestion><match no="1" regexp_match="(€)" regexp_replace="€ "/></suggestion></message>
+				<message>Gebruik een koppelteken na een symbool in een samengesteld woord. <suggestion><match no="1" regexp_match="(€)(.*)" regexp_replace="$1-$2"/></suggestion>  Of voeg een spatie toe <suggestion><match no="1" regexp_match="(€)" regexp_replace="€ "/></suggestion></message>
 				<short>spatie na EUR (EUR_004)</short>
 				<example correction="€-teken|€ teken">Hij gaf mij een <marker>€teken</marker>.</example>
 				<example>Hij gaf mij een <marker>€-teken</marker>.</example>
 			</rule>
 		</rulegroup>
 		<rulegroup id="GETAL_SAMENST" name="20-dollarbiljet → 20 dollarbiljet">
-			<!-- 2013-08-23 TaalTik -->
+			<!-- 2013-08-23 TaalTik   -->
 			<rule>
 				<pattern>
 					<token regexp="yes">[0-9]{1,2}-(dollar|euro|gulden|pond|januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december).+<exception regexp="yes">.*-.*(ponder|ponders)</exception></token>
@@ -2452,7 +2443,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="EEN_ZELFDE" name="een zelfde → eenzelfde">
-			<!-- 2014-08-21 TaalTik -->
+			<!-- 2014-08-21 TaalTik   -->
 			<rule>
 				<pattern>
 					<token regexp="yes">een|de|het|die|dit|dat</token>
@@ -2517,7 +2508,6 @@ regexp case-insensitive maken : (?i)
 				<message>Als <match no="1"/> en <match no="2"/> samen één (Nederlandstalig) begrip zijn, dan is het: <suggestion><match no="1"/>-<match no="2"/></suggestion></message>
 				<short>06-~</short>
 				<example correction="06-nummertje">Zij heeft een <marker>06 nummertje</marker>.</example>
-
 			</rule>
 		</rulegroup>
 		<rulegroup id="TE_VEEL" name="Te veel → teveel">
@@ -2711,7 +2701,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="TE_VOORSCHIJN" name="te voorschijn → tevoorschijn">
-			<!-- 2014-08-22 TaalTik -->
+			<!-- 2014-08-22 TaalTik   -->
 			<rule>
 				<pattern>
 					<token>te</token>
@@ -2723,7 +2713,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="VEERTIG_DAGENTIJD" name="veertig dagentijd → veertigdagentijd">
-			<!-- 2017-06-24 TaalTik -->
+			<!-- 2017-06-24 TaalTik  -->
 			<rule>
 				<pattern>
 					<token>veertig</token>
@@ -2747,7 +2737,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="_15_E" name="15 e → 15e">
-			<!-- 2014-08-22 TaalTik -->
+			<!--    2014-08-22 TaalTik -->
 			<rule>
 				<pattern case_sensitive="yes">
 					<marker>
@@ -2844,9 +2834,9 @@ regexp case-insensitive maken : (?i)
 			<rule>
 				<antipattern><token regexp="yes" case_sensitive="yes">ING|Max|WW|BW|MAX|NL</token></antipattern>
 				<antipattern><token>no</token><token postag="UNKNOWN"/></antipattern> <!-- buitenlandse kreten -->
-				<antipattern><token>no</token><token regexp="yes">nonsens|nonsense|time</token></antipattern>
-				<antipattern><token regexp="yes">geen|het</token><token>ov</token></antipattern>
-				<antipattern><token>de</token><token>MR</token></antipattern>
+				<antipattern><token>no</token><token regexp="yes">nonsens|nonsense|time</token></antipattern> 
+				<antipattern><token regexp="yes">geen|het</token><token>ov</token></antipattern> 
+				<antipattern><token>de</token><token>MR</token></antipattern> 
 				<pattern>
 					<marker>
 						<token regexp="yes">aanw|afb|afd|alg|art|bc|bez|bijv|blz|bw|ca|dhr|div|dr|dra|drs|ds|enz|etc|excl|fa|fam|fig|fr|geb|get|incl|ing|ir|jhr|jkvr|jl|jr|lic|max|mi|mld|mln|mr|nl|no|nr|nrs|ong|onov|ov|pag|plm|plv|resp|vgl|vnl|vnw|voorz|ww|zgn</token>
@@ -2860,7 +2850,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="A_I_O" name="a.i.o. → aio">
-			<!-- 2014-08-19 TaalTik -->
+			<!--  2014-08-19 TaalTik -->
 			<rule>
 				<pattern>
 					<token>A</token>
@@ -2876,7 +2866,21 @@ regexp case-insensitive maken : (?i)
 				<example>Hij is <marker>aio</marker>.</example>
 			</rule>
 		</rulegroup>
-
+		<!--
+		<rulegroup id="MV_APO_S_MV" name="Meervoud met 's">
+		<rule>
+		<pattern case_sensitive="yes">
+		<marker>
+		<token regexp="yes" postag="ZNW:MRV:DE_">.*[bcdefghjklmnpqrstvwxz]('|‘)s<exception regexp="yes">(?iu)(McDonald|there|that|what|it|let|dj|pc|cd|wc|dvd|bh|fte|tv|gsm|bv|cv|pcb|dc|cfk|pk|roc|ic|lp)('|‘)s</exception></token>
+		</marker>
+		</pattern>
+		<message>Alleen na een sterke eindklank en woorden die letter voor letter worden uitgesproken wordt het meervoud met 's geschreven.<suggestion><match no="1" regexp_match="(.*)[’']s" regexp_replace="$1s"/></suggestion>.</message>
+		<url>http://educatie-en-school.infonu.nl/taal/28508-het-gebruik-van-de-apostrof-in-het-nederlands.html</url>
+		<short>' of niet</short>
+		<example correction="scènes">Hij deed het goed in bepaalde <marker>scène's</marker>.</example>
+		</rule>
+		</rulegroup>
+		-->
 		<rulegroup id="BEGINNEN_WW" name="beginnen lopen → beginnen te lopen">
 			<!-- 2014-08-22 TaalTik -->
 			<rule>
@@ -2922,7 +2926,7 @@ regexp case-insensitive maken : (?i)
 				<message>Die spatie hoort er vast niet: <suggestion>\1\2\3</suggestion></message>
 				<example correction="auto's">Ik houd van <marker>auto 's</marker>.</example>
 			</rule>
-		</rulegroup>
+		</rulegroup>		
 
 		<rulegroup id="DES_DE" name="des de / des te">
 			<rule>
@@ -2930,7 +2934,7 @@ regexp case-insensitive maken : (?i)
 					<token case_sensitive="yes">des</token>
 					<token>de</token>
 				</pattern>
-				<message>U bedoelt vast: <suggestion>des te</suggestion>.</message>
+				<message>U bedoelt vast : <suggestion>des te</suggestion>.</message>
 				<example correction="des te">Het is <marker>des de</marker> lelijker.</example>
 			</rule>
 		</rulegroup>
@@ -2987,7 +2991,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="BESEF_ME" name="besef me → realiseer me">
-			<!-- 2014-08-19 TaalTik: regel werkt goed. -->
+			<!--  2014-08-19 TaalTik: regel werkt goed.  -->
 			<rule>
 				<pattern>
 					<token>besef</token>
@@ -3030,7 +3034,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="IRRITEERT_ZICH" name="irriteert zich etc">
-			<!-- 2014-08-19 TaalTik: fout in suggestie verbeterd, url toegevoegd -->
+			<!-- 2014-08-19 TaalTik: fout in suggestie verbeterd, url toegevoegd  -->
 			<rule>
 				<pattern>
 					<token inflected="yes">irriteren</token>
@@ -3106,7 +3110,7 @@ regexp case-insensitive maken : (?i)
 					<token>naar</token>
 				</pattern>
 				<message>U bedoelt vast <suggestion><match no="1" postag="WKW.*">verwijzen</match></suggestion></message>
-				<url>https://taal.vrt.be/refereren-0</url>
+				<url>http://www.vrt.be/taal/refereren-0</url>
 				<example correction="verwijst">Hij <marker>refereert</marker> weer naar de oude zaak.</example>
 			</rule>
 			<rule>
@@ -3160,7 +3164,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="WAT_SCHETST" name="wat schetst">
-			<!-- 2014-08-19 TaalTik: regel werkt goed, url toegevoegd -->
+			<!-- 2014-08-19 TaalTik: regel werkt goed, url toegevoegd  -->
 			<rule>
 				<pattern>
 					<marker>
@@ -3176,7 +3180,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="CORDON_BLUE" name="cordon bleu">
-			<!-- 2014-08-19 TaalTik: -->
+			<!-- 2014-08-19 TaalTik:   -->
 			<rule>
 				<antipattern><token>cordon</token><token>bleu</token></antipattern>
 				<pattern>
@@ -3184,7 +3188,7 @@ regexp case-insensitive maken : (?i)
 					<token regexp="yes">blue|bleu</token>
 				</pattern>
 				<message>Juist is: <suggestion>cordon bleu</suggestion>, want het is Frans.</message>
-				<url>https://nl.wikipedia.org/wiki/Wikipedia:Lijst_van_veelvuldig_gemaakte_fouten_in_het_Nederlands</url>
+				<url>http://nl.wikipedia.org/wiki/Wikipedia:Lijst_van_veelvuldig_gemaakte_fouten_in_het_Nederlands</url>
 				<example correction="cordon bleu">Ik lust geen <marker>cordon blue</marker>.</example>
 				<example>Ik ben dol op <marker>cordon bleu</marker>.</example>
 			</rule>
@@ -3230,7 +3234,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="LAAT_ONS" name="laat ons">
-			<!-- 2014-08-23 TaalTik regel werkt goed, url toegevoegd, tekst aangepast. -->
+			<!--  2014-08-23 TaalTik regel werkt goed, url toegevoegd, tekst aangepast. -->
 			<rule>
 				<pattern>
 					<marker>
@@ -3243,8 +3247,7 @@ regexp case-insensitive maken : (?i)
 				<message>Gebruikelijker is: <suggestion>Laten we</suggestion>.</message>
 				<url>http://taaladvies.net/taal/advies/vraag/483/laat_ons_laten_we/</url>
 				<example correction="Laten we"><marker>Laat ons</marker> beginnen.</example>
-				<example correction="Laten we"><marker>Laat ons</marker> opmerken dat het oriënteringsvermogen prima is.</example>
-				<example correction="Laten we"><marker>Laat ons</marker> hopen.</example>
+				<example correction="Laten we"><marker>Laat ons</marker> opmerken dat het oriënteringsvermogen slechts zijn volle ontwikkeling kan hebben, wanneer de duif van een uitstekende gezondheid geniet.</example>
 			</rule>
 		</rulegroup>
 	</category>
@@ -3453,7 +3456,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="PLAATS_HL" name="Missende hoofdletter in plaatsnaam met 'aan den' er in.">
-			<!-- 2014-08-19 TaalTik -->
+			<!-- 2014-08-19 TaalTik  -->
 			<rule>
 				<pattern>
 					<marker>
@@ -3561,7 +3564,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="GROTE_GETALLEN" name="grote getallen">
-			<!-- 2014-08-19 TaalTik -->
+			<!--  2014-08-19 TaalTik -->
 			<rule>
 				<pattern>
 					<token regexp="yes">.*(m|b|tr)ilj(oen|ard)(een|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|twin|der|veer|honderd|duizend).*</token>
@@ -3578,7 +3581,7 @@ regexp case-insensitive maken : (?i)
 					<!-- 2014-08-19 TaalTik -->
 					<token regexp="yes">.*(m|b|tr)ilj(oen|ard).*(een|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|tig|honderd|duizend).*<exception regexp="yes">(miljarden|miljoenen).*</exception></token>
 				</pattern>
-				<message>De getallen miljoen, miljard, e.d. worden in een getal los geschreven: <suggestion><match no="1" regexp_match="(miljoen|miljard|biljoen|biljard|triljoen|triljard)" regexp_replace="$1 "/></suggestion></message>
+				<message>De getallen miljoen, miljard, e.d. worden in een getal los geschreven:  <suggestion><match no="1" regexp_match="(miljoen|miljard|biljoen|biljard|triljoen|triljard)" regexp_replace="$1 "/></suggestion></message>
 				<url>http://taaladvies.net/taal/advies/tekst/44/aaneenschrijven_van_telwoorden_algemeen/</url>
 				<short>Miljoen etc. horen los</short>
 				<example correction="miljoen vijfhonderdduizend">De regering begrootte drie <marker>miljoenvijfhonderdduizend</marker>.</example>
@@ -3609,7 +3612,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="A" name="Geen a of ad maar á">
-			<!-- 2014-08-23 TaalTik -->
+			<!-- 2014-08-23 TaalTik   -->
 			<rule>
 				<pattern>
 					<token regexp="yes">ad|a</token>
@@ -3624,798 +3627,8 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 	</category>
-    <category id="OPTIONAL_FORMS" name="niet-noodzakelijke correcte spellingvarianten">
-        <rulegroup id="OPTIONAL_HYPHEN" name="optioneel koppelteken">
-           <rule>
-               <antipattern><token regexp="yes">([0-9]|&gespeld;|ex|bijna|niet|non|e|x|oud)-.*</token></antipattern>
-               <antipattern><token regexp="yes">.*-([0-9]|&gespeld;)</token></antipattern>
-               <antipattern><token regexp="yes">(noord|zuid|oost|west)-.*</token></antipattern>
-               <antipattern><token regexp="yes">.*[0-9](km|mm|cc)-.*</token></antipattern>
-               <antipattern><token regexp="yes">[+%]-.*</token></antipattern>
-               <antipattern><token regexp="yes">a-capella.*</token></antipattern>
-               <antipattern><token regexp="yes">ad-hoc.*</token></antipattern>
-               <antipattern><token regexp="yes">ad-interim.*</token></antipattern>
-               <antipattern><token regexp="yes">adjunct-.*</token></antipattern>
-               <antipattern><token regexp="yes">après-sk.*</token></antipattern>
-               <antipattern><token regexp="yes">a-priori.*</token></antipattern>
-               <antipattern><token regexp="yes">arts-patiënt.*</token></antipattern>
-               <antipattern><token regexp="yes">aspirant-.*</token></antipattern>
-               <antipattern><token regexp="yes">assistent-.*</token></antipattern>
-               <antipattern><token regexp="yes">au-pair.*</token></antipattern>
-               <antipattern><token regexp="yes">avant-gard.*</token></antipattern>
-               <antipattern><token regexp="yes">b2b-.*</token></antipattern>
-               <antipattern><token regexp="yes">bachelor-master.*</token></antipattern>
-               <antipattern><token regexp="yes">.*back-up.*</token></antipattern>
-               <antipattern><token regexp="yes">betaal-per-keer.*</token></antipattern>
-               <antipattern><token regexp="yes">bonus-malus.*</token></antipattern>
-               <antipattern><token regexp="yes">break-even.*</token></antipattern>
-               <antipattern><token regexp="yes">burn-out.*</token></antipattern>
-               <antipattern><token regexp="yes">business-to-business.*</token></antipattern>
-               <antipattern><token regexp="yes">Caricom-.*</token></antipattern>
-               <antipattern><token regexp="yes">cash-and-carry.*</token></antipattern>
-               <antipattern><token regexp="yes">chef-.*</token></antipattern>
-               <antipattern><token regexp="yes">chill-out.*</token></antipattern>
-               <antipattern><token regexp="yes">Cito-.*</token></antipattern>
-               <antipattern><token regexp="yes">CO₂-.*</token></antipattern>
-               <antipattern><token regexp="yes">collega-.*</token></antipattern>
-               <antipattern><token regexp="yes">country-and-western.*</token></antipattern>
-               <antipattern><token regexp="yes">dag-en-nacht.*</token></antipattern>
-               <antipattern><token regexp="yes">een-op-een.*</token></antipattern>
-               <antipattern><token regexp="yes">.*follow-up.*</token></antipattern>
-               <antipattern><token regexp="yes">glas-in-lood.*</token></antipattern>
-               <antipattern><token regexp="yes">grand-prix.*</token></antipattern>
-               <antipattern><token regexp="yes">haat-liefde.*</token></antipattern>
-               <antipattern><token regexp="yes">half-om-half.*</token></antipattern>
-               <antipattern><token regexp="yes">Halt-.*</token></antipattern>
-               <antipattern><token regexp="yes">ham-kaas.*</token></antipattern>
-               <antipattern><token regexp="yes">hands-on.*</token></antipattern>
-               <antipattern><token regexp="yes">heen-en-weer.*</token></antipattern>
-               <antipattern><token regexp="yes">hink-stap-spr.*</token></antipattern>
-               <antipattern><token regexp="yes">huid-op-huid.*</token></antipattern>
-               <antipattern><token regexp="yes">huis-aan-huis.*</token></antipattern>
-               <antipattern><token regexp="yes">interim-.*</token></antipattern>
-               <antipattern><token regexp="yes">kandidaat-.*</token></antipattern>
-               <antipattern><token regexp="yes">kant-en-klaar.*</token></antipattern>
-               <antipattern><token regexp="yes">kwaliteit-prijs.*</token></antipattern>
-               <antipattern><token regexp="yes">lach-of-ik-schiet.*</token></antipattern>
-               <antipattern><token regexp="yes">.*lay-out.*</token></antipattern>
-               <antipattern><token regexp="yes">leer-en-werk.*</token></antipattern>
-               <antipattern><token regexp="yes">leerling-.*</token></antipattern>
-               <antipattern><token regexp="yes">leer-werkplaats.*</token></antipattern>
-               <antipattern><token regexp="yes">leer-werkplek.*</token></antipattern>
-               <antipattern><token regexp="yes">lik-op-stuk.*</token></antipattern>
-               <antipattern><token regexp="yes">loon-prijs.*</token></antipattern>
-               <antipattern><token regexp="yes">maag-darm.*</token></antipattern>
-               <antipattern><token regexp="yes">macro-micro.*</token></antipattern>
-               <antipattern><token regexp="yes">man-tegen-man.*</token></antipattern>
-               <antipattern><token regexp="yes">man-vrouw.*</token></antipattern>
-               <antipattern><token regexp="yes">mavo-havo.*</token></antipattern>
-               <antipattern><token regexp="yes">minister-president.*</token></antipattern>
-               <antipattern><token regexp="yes">moeder-dochter.*</token></antipattern>
-               <antipattern><token regexp="yes">moeder-kind.*</token></antipattern>
-               <antipattern><token regexp="yes">Nasdaq-.*</token></antipattern>
-               <antipattern><token regexp="yes">neef-nicht.*</token></antipattern>
-               <antipattern><token regexp="yes">negen-tot-vijf.*</token></antipattern>
-               <antipattern><token regexp="yes">nek-aan-nek.*</token></antipattern>
-               <antipattern><token regexp="yes">neus-keel-oor.*</token></antipattern>
-               <antipattern><token regexp="yes">neus-keel.*</token></antipattern>
-               <antipattern><token regexp="yes">no-claim.*</token></antipattern>
-               <antipattern><token regexp="yes">no-go.*</token></antipattern>
-               <antipattern><token regexp="yes">no-nonsense.*</token></antipattern>
-               <antipattern><token regexp="yes">noord-zuid.*</token></antipattern>
-               <antipattern><token regexp="yes">no-risk.*</token></antipattern>
-               <antipattern><token regexp="yes">no-show.*</token></antipattern>
-               <antipattern><token regexp="yes">ob-.*</token></antipattern>
-               <antipattern><token regexp="yes">ont-sms.*</token></antipattern>
-               <antipattern><token regexp="yes">oorzaak-gevolg.*</token></antipattern>
-               <antipattern><token regexp="yes">oost-west.*</token></antipattern>
-               <antipattern><token regexp="yes">paard-en-wagen.*</token></antipattern>
-               <antipattern><token regexp="yes">park-and-ride.*</token></antipattern>
-               <antipattern><token regexp="yes">pay-per-view.*</token></antipattern>
-               <antipattern><token regexp="yes">peer-to-peer.*</token></antipattern>
-               <antipattern><token regexp="yes">pen-en-gat.*</token></antipattern>
-               <antipattern><token regexp="yes">peper-en-zout.*</token></antipattern>
-               <antipattern><token regexp="yes">pick-up.*</token></antipattern>
-               <antipattern><token regexp="yes">pijl-en-boog.*</token></antipattern>
-               <antipattern><token regexp="yes">prijs-kwaliteit.*</token></antipattern>
-               <antipattern><token regexp="yes">prijs-prestatie.*</token></antipattern>
-               <antipattern><token regexp="yes">product-markt.*</token></antipattern>
-               <antipattern><token regexp="yes">pro-forma.*</token></antipattern>
-               <antipattern><token regexp="yes">rekening-courant.*</token></antipattern>
-               <antipattern><token regexp="yes">Riagg-.*</token></antipattern>
-               <antipattern><token regexp="yes">rock-'n-roll.*</token></antipattern>
-               <antipattern><token regexp="yes">roll-on-roll-off.*</token></antipattern>
-               <antipattern><token regexp="yes">rooms-katholi.*</token></antipattern>
-               <antipattern><token regexp="yes">rug-aan-rug.*</token></antipattern>
-               <antipattern><token regexp="yes">shock-and-awe.*</token></antipattern>
-               <antipattern><token regexp="yes">singer-songwriter.*</token></antipattern>
-               <antipattern><token regexp="yes">sint-.*</token></antipattern>
-               <antipattern><token regexp="yes">slaap-waak.*</token></antipattern>
-               <antipattern><token regexp="yes">spin-off.*</token></antipattern>
-               <antipattern><token regexp="yes">spraak-taal.*</token></antipattern>
-               <antipattern><token regexp="yes">stand-by.*</token></antipattern>
-               <antipattern><token regexp="yes">stand-up.*</token></antipattern>
-               <antipattern><token regexp="yes">start-up.*</token></antipattern>
-               <antipattern><token regexp="yes">.*pin-up</token></antipattern>
-               <antipattern><token regexp="yes">to-do.*</token></antipattern>
-               <antipattern><token regexp="yes">top-down.*</token></antipattern>
-               <antipattern><token regexp="yes">trein-tram-bus.*</token></antipattern>
-               <antipattern><token regexp="yes">trial-and-error.*</token></antipattern>
-               <antipattern><token regexp="yes">try-out.*</token></antipattern>
-               <antipattern><token regexp="yes">up-or-out.*</token></antipattern>
-               <antipattern><token regexp="yes">up-to-date.*</token></antipattern>
-               <antipattern><token regexp="yes">vader-zoon.*</token></antipattern>
-               <antipattern><token regexp="yes">Vlaams-natio.*</token></antipattern>
-               <antipattern><token regexp="yes">warming-up.*</token></antipattern>
-               <antipattern><token regexp="yes">werk-leer.*</token></antipattern>
-               <antipattern><token regexp="yes">werk-naar-werk.*</token></antipattern>
-               <antipattern><token regexp="yes">werk-privé.*</token></antipattern>
-               <antipattern><token regexp="yes">werving-en-selectie.*</token></antipattern>
-               <antipattern><token regexp="yes">winst-en-verlies.*</token></antipattern>
-               <antipattern><token regexp="yes">woon-zorgcentr.*</token></antipattern>
-               <antipattern><token regexp="yes">zwaan-kleef-aan.*</token></antipattern>
-               <antipattern><token>aap-noot-mies</token></antipattern>
-               <antipattern><token>accountant-administratieconsulent</token></antipattern>
-               <antipattern><token>acteur-regisseur</token></antipattern>
-               <antipattern><token>add-on</token></antipattern>
-               <antipattern><token>adjudant-chef</token></antipattern>
-               <antipattern><token>adjunct-boekhouder</token></antipattern>
-               <antipattern><token>ad-liminabezoek</token></antipattern>
-               <antipattern><token>administrateur-generaal</token></antipattern>
-               <antipattern><token>adviseur-generaal</token></antipattern>
-               <antipattern><token>advocaat-fiscaal</token></antipattern>
-               <antipattern><token>advocaat-generaal</token></antipattern>
-               <antipattern><token>advocaat-stagiaire</token></antipattern>
-               <antipattern><token>advocaat-stagiair</token></antipattern>
-               <antipattern><token>agent-provocateur</token></antipattern>
-               <antipattern><token>airbag-bh</token></antipattern>
-               <antipattern><token>aka-diploma</token></antipattern>
-               <antipattern><token>aka-leerling</token></antipattern>
-               <antipattern><token>aka-opleiding</token></antipattern>
-               <antipattern><token>a-klank</token></antipattern>
-               <antipattern><token>à-la-cartemenu</token></antipattern>
-               <antipattern><token>à-la-carterestaurant</token></antipattern>
-               <antipattern><token>alarm-sms</token></antipattern>
-               <antipattern><token>alleen-zijn</token></antipattern>
-               <antipattern><token>alles-of-nietsmentaliteit</token></antipattern>
-               <antipattern><token>all-in-one</token></antipattern>
-               <antipattern><token>all-in</token></antipattern>
-               <antipattern><token>all-over</token></antipattern>
-               <antipattern><token>als-alsgedoe</token></antipattern>
-               <antipattern><token>analist-programmeur</token></antipattern>
-               <antipattern><token>anorexia-nervosapatiënt</token></antipattern>
-               <antipattern><token>arts-assistent</token></antipattern>
-               <antipattern><token>arts-in-opleidinghypotheek</token></antipattern>
-               <antipattern><token>arts-onderzoeker</token></antipattern>
-               <antipattern><token>arts-specialist</token></antipattern>
-               <antipattern><token>as-builtplan</token></antipattern>
-               <antipattern><token>a-snaar</token></antipattern>
-               <antipattern><token>aso-richting</token></antipattern>
-               <antipattern><token>bain-marie</token></antipattern>
-               <antipattern><token>auditeur-generaal</token></antipattern>
-               <antipattern><token>auditoraat-generaal</token></antipattern>
-               <antipattern><token>avant-première</token></antipattern>
-               <antipattern><token>avant-scène</token></antipattern>
-               <antipattern><token>bakkerij-patisserie</token></antipattern>
-               <antipattern><token>bakker-patissier</token></antipattern>
-               <antipattern><token>balkanvergeet-mij-niet</token></antipattern>
-               <antipattern><token>bank-verzekeraar</token></antipattern>
-               <antipattern><token>bar-restaurant</token></antipattern>
-               <antipattern><token>bas-bariton</token></antipattern>
-               <antipattern><token>bas-reliëf</token></antipattern>
-               <antipattern><token>bbl-opleiding</token></antipattern>
-               <antipattern><token>bed-bad-broodregeling</token></antipattern>
-               <antipattern><token>bed-bad-broodvoorziening</token></antipattern>
-               <antipattern><token>bel-etage</token></antipattern>
-               <antipattern><token>best-of-sevenserie</token></antipattern>
-               <antipattern><token>bestuurlijk-technisch</token></antipattern>
-               <antipattern><token>biologisch-dynamisch</token></antipattern>
-               <antipattern><token>black-out</token></antipattern>
-               <antipattern><token>blauw-geel</token></antipattern>
-               <antipattern><token>blijf-van-mijn-lijfhuis</token></antipattern>
-               <antipattern><token>blow-out</token></antipattern>
-               <antipattern><token>blow-up</token></antipattern>
-               <antipattern><token>boter-kaas-en-eieren</token></antipattern>
-               <antipattern><token>bottom-up</token></antipattern>
-               <antipattern><token>bowl-out</token></antipattern>
-               <antipattern><token>break-out</token></antipattern>
-               <antipattern><token>break-up</token></antipattern>
-               <antipattern><token>bric-à-brac</token></antipattern>
-               <antipattern><token>brigadier-generaal</token></antipattern>
-               <antipattern><token>brown-out</token></antipattern>
-               <antipattern><token>bureau-ministre</token></antipattern>
-               <antipattern><token>burgerlijk-liberaal</token></antipattern>
-               <antipattern><token>business-to-consumer</token></antipattern>
-               <antipattern><token>buy-in</token></antipattern>
-               <antipattern><token>buy-out</token></antipattern>
-               <antipattern><token>bvz-patiënt</token></antipattern>
-               <antipattern><token>b-woord</token></antipattern>
-               <antipattern><token>café-bar</token></antipattern>
-               <antipattern><token>café-brasserie</token></antipattern>
-               <antipattern><token>café-eigenaar</token></antipattern>
-               <antipattern><token>café-restaurant</token></antipattern>
-               <antipattern><token>café-uitbater</token></antipattern>
-               <antipattern><token>catch-as-catch-can</token></antipattern>
-               <antipattern><token>check-in</token></antipattern>
-               <antipattern><token>check-up</token></antipattern>
-               <antipattern><token>christelijk-fundamentalistisch</token></antipattern>
-               <antipattern><token>christelijk-gereformeerde</token></antipattern>
-               <antipattern><token>christelijk-gereformeerd</token></antipattern>
-               <antipattern><token>christelijk-historisch</token></antipattern>
-               <antipattern><token>christelijk-islamitisch</token></antipattern>
-               <antipattern><token>christelijk-nationaal</token></antipattern>
-               <antipattern><token>christelijk-orthodox</token></antipattern>
-               <antipattern><token>christelijk-sociaal</token></antipattern>
-               <antipattern><token>christen-zijn</token></antipattern>
-               <antipattern><token>coach-trainer</token></antipattern>
-               <antipattern><token>cola-tic</token></antipattern>
-               <antipattern><token>coming-out</token></antipattern>
-               <antipattern><token>comité-generaal</token></antipattern>
-               <antipattern><token>commissariaat-generaal</token></antipattern>
-               <antipattern><token>commissaris-generaal</token></antipattern>
-               <antipattern><token>commissaris-revisor</token></antipattern>
-               <antipattern><token>conservatief-democratisch</token></antipattern>
-               <antipattern><token>conservatief-liberaal</token></antipattern>
-               <antipattern><token>consulaat-generaal</token></antipattern>
-               <antipattern><token>consulent-verpleegkundige</token></antipattern>
-               <antipattern><token>consul-generaal</token></antipattern>
-               <antipattern><token>cover-up</token></antipattern>
-               <antipattern><token>cross-over</token></antipattern>
-               <antipattern><token>c-sleutel</token></antipattern>
-               <antipattern><token>ctrl-toets</token></antipattern>
-               <antipattern><token>cultureel-historisch</token></antipattern>
-               <antipattern><token>cultureel-maatschappelijk</token></antipattern>
-               <antipattern><token>cultureel-politiek</token></antipattern>
-               <antipattern><token>cvs-patiënt</token></antipattern>
-               <antipattern><token>dans-en-showorkest</token></antipattern>
-               <antipattern><token>dbc-systeem</token></antipattern>
-               <antipattern><token>demi-monde</token></antipattern>
-               <antipattern><token>demi-sec</token></antipattern>
-               <antipattern><token>democratisch-liberaal</token></antipattern>
-               <antipattern><token>democratisch-socialistisch</token></antipattern>
-               <antipattern><token>denial-of-serviceactie</token></antipattern>
-               <antipattern><token>deur-aan-deurverkoop</token></antipattern>
-               <antipattern><token>dichter-schilder</token></antipattern>
-               <antipattern><token>dichter-zanger</token></antipattern>
-               <antipattern><token>dienst-gsm</token></antipattern>
-               <antipattern><token>directeur-bestuurder</token></antipattern>
-               <antipattern><token>directeur-coördinator</token></antipattern>
-               <antipattern><token>directeur-eigenaar</token></antipattern>
-               <antipattern><token>directeur-generaal</token></antipattern>
-               <antipattern><token>directeur-grootaandeelhouder</token></antipattern>
-               <antipattern><token>directeur-secretaris</token></antipattern>
-               <antipattern><token>directoraat-generaal</token></antipattern>
-               <antipattern><token>dokter-stagiair</token></antipattern>
-               <antipattern><token>doos-in-doosconstructie</token></antipattern>
-               <antipattern><token>do's-and-don'ts</token></antipattern>
-               <antipattern><token>dosis-responsrelatie</token></antipattern>
-               <antipattern><token>down-under</token></antipattern>
-               <antipattern><token>drang-en-dwangplek</token></antipattern>
-               <antipattern><token>driehoog-achter</token></antipattern>
-               <antipattern><token>dr-lid</token></antipattern>
-               <antipattern><token>drop-out</token></antipattern>
-               <antipattern><token>dt-fobie</token></antipattern>
-               <antipattern><token>dt-regel</token></antipattern>
-               <antipattern><token>dug-out</token></antipattern>
-               <antipattern><token>duivel-doet-al</token></antipattern>
-               <antipattern><token>Duizend-en-een-nacht</token></antipattern>
-               <antipattern><token>duizend-en-een</token></antipattern>
-               <antipattern><token>economisch-financieel</token></antipattern>
-               <antipattern><token>economisch-geografisch</token></antipattern>
-               <antipattern><token>economisch-historisch</token></antipattern>
-               <antipattern><token>economisch-politiek</token></antipattern>
-               <antipattern><token>economisch-statistisch</token></antipattern>
-               <antipattern><token>een-na-laatst</token></antipattern>
-               <antipattern><token>een-tweetje</token></antipattern>
-               <antipattern><token>eigenaar-bewoner</token></antipattern>
-               <antipattern><token>eigenaar-directeur</token></antipattern>
-               <antipattern><token>end-of-lifebeslissing</token></antipattern>
-               <antipattern><token>esc-toets</token></antipattern>
-               <antipattern><token>etnisch-cultureel</token></antipattern>
-               <antipattern><token>Eurodac-systeem</token></antipattern>
-               <antipattern><token>euro-dollarkoers</token></antipattern>
-               <antipattern><token>evc-traject</token></antipattern>
-               <antipattern><token>expert-boekhouder</token></antipattern>
-               <antipattern><token>extra-murosactiviteit</token></antipattern>
-               <antipattern><token>factuurlay-out</token></antipattern>
-               <antipattern><token>fall-out</token></antipattern>
-               <antipattern><token>financieel-administratief</token></antipattern>
-               <antipattern><token>financieel-economisch</token></antipattern>
-               <antipattern><token>financieel-monetair</token></antipattern>
-               <antipattern><token>financieel-technisch</token></antipattern>
-               <antipattern><token>fiscaal-economisch</token></antipattern>
-               <antipattern><token>fiscaal-juridisch</token></antipattern>
-               <antipattern><token>fit-o-meter</token></antipattern>
-               <antipattern><token>flap-over</token></antipattern>
-               <antipattern><token>flip-over</token></antipattern>
-               <antipattern><token>fly-drive</token></antipattern>
-               <antipattern><token>fly-over</token></antipattern>
-               <antipattern><token>formeel-juridisch</token></antipattern>
-               <antipattern><token>f-sleutel</token></antipattern>
-               <antipattern><token>f-woord</token></antipattern>
-               <antipattern><token>fysisch-chemisch</token></antipattern>
-               <antipattern><token>geel-blauw</token></antipattern>
-               <antipattern><token>geneesheer-directeur</token></antipattern>
-               <antipattern><token>geneesheer-specialist</token></antipattern>
-               <antipattern><token>generaal-majoor</token></antipattern>
-               <antipattern><token>gentleman-trainer</token></antipattern>
-               <antipattern><token>geometrisch-abstract</token></antipattern>
-               <antipattern><token>gereformeerd-vrijgemaakte</token></antipattern>
-               <antipattern><token>gereformeerd-vrijgemaakt</token></antipattern>
-               <antipattern><token>Gestapo-chef</token></antipattern>
-               <antipattern><token>gin-fizz</token></antipattern>
-               <antipattern><token>gin-tonic</token></antipattern>
-               <antipattern><token>gm-bedrijf</token></antipattern>
-               <antipattern><token>go-between</token></antipattern>
-               <antipattern><token>goeiemorgen-sms</token></antipattern>
-               <antipattern><token>go-getter</token></antipattern>
-               <antipattern><token>gouverneur-generaal</token></antipattern>
-               <antipattern><token>g-plek</token></antipattern>
-               <antipattern><token>Grieks-orthodox</token></antipattern>
-               <antipattern><token>grootaandeelhouder-president</token></antipattern>
-               <antipattern><token>g-sleutel</token></antipattern>
-               <antipattern><token>g-snaar</token></antipattern>
-               <antipattern><token>g-spot</token></antipattern>
-               <antipattern><token>g-string</token></antipattern>
-               <antipattern><token>half-en-half</token></antipattern>
-               <antipattern><token>ham-preisalade</token></antipattern>
-               <antipattern><token>hand-out</token></antipattern>
-               <antipattern><token>hang-en-sluitwerk</token></antipattern>
-               <antipattern><token>hang-up</token></antipattern>
-               <antipattern><token>hard-boiled</token></antipattern>
-               <antipattern><token>haut-reliëf</token></antipattern>
-               <antipattern><token>Hellp-syndroom</token></antipattern>
-               <antipattern><token>het-woord</token></antipattern>
-               <antipattern><token>hier-en-nu</token></antipattern>
-               <antipattern><token>high-definition</token></antipattern>
-               <antipattern><token>hij-figuur</token></antipattern>
-               <antipattern><token>hij-vorm</token></antipattern>
-               <antipattern><token>historisch-cultureel</token></antipattern>
-               <antipattern><token>historisch-kritisch</token></antipattern>
-               <antipattern><token>historisch-sociologisch</token></antipattern>
-               <antipattern><token>hold-up</token></antipattern>
-               <antipattern><token>honderd-en-een</token></antipattern>
-               <antipattern><token>hoofdadvocaat-generaal</token></antipattern>
-               <antipattern><token>hoofdingenieur-directeur</token></antipattern>
-               <antipattern><token>hoog-laagbed</token></antipattern>
-               <antipattern><token>hoogleraar-directeur</token></antipattern>
-               <antipattern><token>horeca-cao</token></antipattern>
-               <antipattern><token>hors-d'oeuvre</token></antipattern>
-               <antipattern><token>hotel-café-restaurant</token></antipattern>
-               <antipattern><token>hotel-restaurant</token></antipattern>
-               <antipattern><token>huig-r</token></antipattern>
-               <antipattern><token>i-ad</token></antipattern>
-               <antipattern><token>i-bankieren</token></antipattern>
-               <antipattern><token>id-baan</token></antipattern>
-               <antipattern><token>i-generatie</token></antipattern>
-               <antipattern><token>i-grec</token></antipattern>
-               <antipattern><token>ik-besef</token></antipattern>
-               <antipattern><token>ik-bewustzijn</token></antipattern>
-               <antipattern><token>ik-boodschap</token></antipattern>
-               <antipattern><token>ik-cultuur</token></antipattern>
-               <antipattern><token>i-kerk</token></antipattern>
-               <antipattern><token>ik-figuur</token></antipattern>
-               <antipattern><token>ik-generatie</token></antipattern>
-               <antipattern><token>ik-gevoel</token></antipattern>
-               <antipattern><token>ik-opatestament</token></antipattern>
-               <antipattern><token>ik-personage</token></antipattern>
-               <antipattern><token>ik-persoon</token></antipattern>
-               <antipattern><token>ik-perspectief</token></antipattern>
-               <antipattern><token>ik-roman</token></antipattern>
-               <antipattern><token>ik-tijdperk</token></antipattern>
-               <antipattern><token>ik-verhaal</token></antipattern>
-               <antipattern><token>ik-verteller</token></antipattern>
-               <antipattern><token>ik-vertelsituatie</token></antipattern>
-               <antipattern><token>ik-vertelster</token></antipattern>
-               <antipattern><token>ik-vorm</token></antipattern>
-               <antipattern><token>ik-zuchtig</token></antipattern>
-               <antipattern><token>ik-zucht</token></antipattern>
-               <antipattern><token>i-mode</token></antipattern>
-               <antipattern><token>ingenieur-architect</token></antipattern>
-               <antipattern><token>inspecteur-generaal</token></antipattern>
-               <antipattern><token>instroom-doorstroombaan</token></antipattern>
-               <antipattern><token>internationaal-economisch</token></antipattern>
-               <antipattern><token>internationaal-politiek</token></antipattern>
-               <antipattern><token>invaller-doelman</token></antipattern>
-               <antipattern><token>islamitisch-fundamentalistisch</token></antipattern>
-               <antipattern><token>i-unit</token></antipattern>
-               <antipattern><token>jager-verzamelaar</token></antipattern>
-               <antipattern><token>ja-neevraag</token></antipattern>
-               <antipattern><token>jan-van-gent</token></antipattern>
-               <antipattern><token>ja-stemmer</token></antipattern>
-               <antipattern><token>ja-stem</token></antipattern>
-               <antipattern><token>jij-bak</token></antipattern>
-               <antipattern><token>jij-vorm</token></antipattern>
-               <antipattern><token>joods-christelijk</token></antipattern>
-               <antipattern><token>joods-orthodox</token></antipattern>
-               <antipattern><token>journalist-cabaretier</token></antipattern>
-               <antipattern><token>journalist-schrijver</token></antipattern>
-               <antipattern><token>judeo-christelijk</token></antipattern>
-               <antipattern><token>juridisch-technisch</token></antipattern>
-               <antipattern><token>kapitein-commandant</token></antipattern>
-               <antipattern><token>kapitein-generaal</token></antipattern>
-               <antipattern><token>kapitein-luitenant</token></antipattern>
-               <antipattern><token>kapitein-ter-zee</token></antipattern>
-               <antipattern><token>kapitein-vlieger</token></antipattern>
-               <antipattern><token>kardinaal-infant</token></antipattern>
-               <antipattern><token>kat-en-muisspel</token></antipattern>
-               <antipattern><token>keel-neus-oorarts</token></antipattern>
-               <antipattern><token>keizerin-moeder</token></antipattern>
-               <antipattern><token>kerst-in</token></antipattern>
-               <antipattern><token>kick-and-rush</token></antipattern>
-               <antipattern><token>kick-offs</token></antipattern>
-               <antipattern><token>kick-off</token></antipattern>
-               <antipattern><token>kind-zijn</token></antipattern>
-               <antipattern><token>kippen-groentesoep</token></antipattern>
-               <antipattern><token>ki-station</token></antipattern>
-               <antipattern><token>klaar-over</token></antipattern>
-               <antipattern><token>klassiek-romantisch</token></antipattern>
-               <antipattern><token>klinisch-wetenschappelijk</token></antipattern>
-               <antipattern><token>klip-en-klaar</token></antipattern>
-               <antipattern><token>klok-en-hamerspel</token></antipattern>
-               <antipattern><token>knip-en-plakideologie</token></antipattern>
-               <antipattern><token>knip-en-plakwerk</token></antipattern>
-               <antipattern><token>kno-arts</token></antipattern>
-               <antipattern><token>knock-outs</token></antipattern>
-               <antipattern><token>knock-out</token></antipattern>
-               <antipattern><token>koek-en-zopietent</token></antipattern>
-               <antipattern><token>koek-en-zopie</token></antipattern>
-               <antipattern><token>koers-winstverhouding</token></antipattern>
-               <antipattern><token>koningin-moeder</token></antipattern>
-               <antipattern><token>koningin-regentes</token></antipattern>
-               <antipattern><token>koningin-weduwe</token></antipattern>
-               <antipattern><token>koning-keizer</token></antipattern>
-               <antipattern><token>koning-stadhouder</token></antipattern>
-               <antipattern><token>kop-hals-rompboerderij</token></antipattern>
-               <antipattern><token>krapé-ei</token></antipattern>
-               <antipattern><token>k-woord</token></antipattern>
-               <antipattern><token>landmeter-expert</token></antipattern>
-               <antipattern><token>lay-up</token></antipattern>
-               <antipattern><token>leraar-koster</token></antipattern>
-               <antipattern><token>liberaal-conservatief</token></antipattern>
-               <antipattern><token>liberaal-democraat</token></antipattern>
-               <antipattern><token>liberaal-democratisch</token></antipattern>
-               <antipattern><token>lief-en-leedpot</token></antipattern>
-               <antipattern><token>lift-off</token></antipattern>
-               <antipattern><token>lijf-aan-lijfgevecht</token></antipattern>
-               <antipattern><token>links-liberaal</token></antipattern>
-               <antipattern><token>links-progressief</token></antipattern>
-               <antipattern><token>links-radicaal</token></antipattern>
-               <antipattern><token>links-socialistisch</token></antipattern>
-               <antipattern><token>literair-historisch</token></antipattern>
-               <antipattern><token>literair-kritisch</token></antipattern>
-               <antipattern><token>litterair-historicus</token></antipattern>
-               <antipattern><token>Lloyd's-lid</token></antipattern>
-               <antipattern><token>lock-out</token></antipattern>
-               <antipattern><token>lock-up</token></antipattern>
-               <antipattern><token>look-zonder-look</token></antipattern>
-               <antipattern><token>los-vast</token></antipattern>
-               <antipattern><token>luitenant-adjudant</token></antipattern>
-               <antipattern><token>luitenant-admiraal</token></antipattern>
-               <antipattern><token>luitenant-generaal</token></antipattern>
-               <antipattern><token>luitenant-kolonel</token></antipattern>
-               <antipattern><token>luitenant-ter-zee</token></antipattern>
-               <antipattern><token>maag-darm-leverarts</token></antipattern>
-               <antipattern><token>magisch-realistisch</token></antipattern>
-               <antipattern><token>majoor-generaal</token></antipattern>
-               <antipattern><token>major-minorsysteem</token></antipattern>
-               <antipattern><token>making-of</token></antipattern>
-               <antipattern><token>mama's-kind</token></antipattern>
-               <antipattern><token>managementbuy-out</token></antipattern>
-               <antipattern><token>manisch-depressief</token></antipattern>
-               <antipattern><token>man-zijn</token></antipattern>
-               <antipattern><token>mark-up</token></antipattern>
-               <antipattern><token>mash-up</token></antipattern>
-               <antipattern><token>m-bankieren</token></antipattern>
-               <antipattern><token>m-business</token></antipattern>
-               <antipattern><token>McDonald's-maaltijd</token></antipattern>
-               <antipattern><token>m-commerce</token></antipattern>
-               <antipattern><token>medisch-administratief</token></antipattern>
-               <antipattern><token>medisch-biologisch</token></antipattern>
-               <antipattern><token>medisch-ethisch</token></antipattern>
-               <antipattern><token>medisch-juridisch</token></antipattern>
-               <antipattern><token>medisch-psychiatrisch</token></antipattern>
-               <antipattern><token>medisch-psychologisch</token></antipattern>
-               <antipattern><token>medisch-sociaal</token></antipattern>
-               <antipattern><token>medisch-specialistisch</token></antipattern>
-               <antipattern><token>medisch-technisch</token></antipattern>
-               <antipattern><token>medisch-technologisch</token></antipattern>
-               <antipattern><token>medisch-wetenschappelijk</token></antipattern>
-               <antipattern><token>meester-architect</token></antipattern>
-               <antipattern><token>meester-brouwer</token></antipattern>
-               <antipattern><token>meester-chef</token></antipattern>
-               <antipattern><token>meester-kok</token></antipattern>
-               <antipattern><token>meester-opzichter</token></antipattern>
-               <antipattern><token>meester-schaker</token></antipattern>
-               <antipattern><token>meester-schilder</token></antipattern>
-               <antipattern><token>meester-schoenmaker</token></antipattern>
-               <antipattern><token>meet-and-greet</token></antipattern>
-               <antipattern><token>menselijk-zijn</token></antipattern>
-               <antipattern><token>mens-wereldbeeld</token></antipattern>
-               <antipattern><token>mens-wereldbeschouwing</token></antipattern>
-               <antipattern><token>mens-zijn</token></antipattern>
-               <antipattern><token>mentaal-cultureel</token></antipattern>
-               <antipattern><token>mentor-coach</token></antipattern>
-               <antipattern><token>metafysisch-moreel</token></antipattern>
-               <antipattern><token>milieu-effect</token></antipattern>
-               <antipattern><token>militair-civiel</token></antipattern>
-               <antipattern><token>militair-economisch</token></antipattern>
-               <antipattern><token>militair-historisch</token></antipattern>
-               <antipattern><token>militair-industrieel</token></antipattern>
-               <antipattern><token>militair-politiek</token></antipattern>
-               <antipattern><token>militair-strategisch</token></antipattern>
-               <antipattern><token>militair-technisch</token></antipattern>
-               <antipattern><token>ministers-presidenten</token></antipattern>
-               <antipattern><token>mock-up</token></antipattern>
-               <antipattern><token>modern-klassiek</token></antipattern>
-               <antipattern><token>moeder-overste</token></antipattern>
-               <antipattern><token>moeder-zijn</token></antipattern>
-               <antipattern><token>moerasvergeet-mij-niet</token></antipattern>
-               <antipattern><token>mom-to-mommarketing</token></antipattern>
-               <antipattern><token>moreel-ethisch</token></antipattern>
-               <antipattern><token>moslim-gsm</token></antipattern>
-               <antipattern><token>mr-vergadering</token></antipattern>
-               <antipattern><token>mr-voorzitter</token></antipattern>
-               <antipattern><token>m-ticket</token></antipattern>
-               <antipattern><token>muzikaal-ritmisch</token></antipattern>
-               <antipattern><token>mvo-beleid</token></antipattern>
-               <antipattern><token>mvv-vereiste</token></antipattern>
-               <antipattern><token>Nederlands-hervormd</token></antipattern>
-               <antipattern><token>neoavant-garde</token></antipattern>
-               <antipattern><token>netto-netto</token></antipattern>
-               <antipattern><token>nko-arts</token></antipattern>
-               <antipattern><token>no-flyzone</token></antipattern>
-               <antipattern><token>of-ofverhaal</token></antipattern>
-               <antipattern><token>ok-assistent</token></antipattern>
-               <antipattern><token>ondersecretaris-generaal</token></antipattern>
-               <antipattern><token>ons-kent-onsgevoel</token></antipattern>
-               <antipattern><token>oosters-orthodox</token></antipattern>
-               <antipattern><token>open-minded</token></antipattern>
-               <antipattern><token>opt-in</token></antipattern>
-               <antipattern><token>opt-out</token></antipattern>
-               <antipattern><token>or-lid</token></antipattern>
-               <antipattern><token>paard-en-kar</token></antipattern>
-               <antipattern><token>paars-rood</token></antipattern>
-               <antipattern><token>paars-wit</token></antipattern>
-               <antipattern><token>parket-generaal</token></antipattern>
-               <antipattern><token>parlementair-democratisch</token></antipattern>
-               <antipattern><token>parlementair-politiek</token></antipattern>
-               <antipattern><token>pastoor-deken</token></antipattern>
-               <antipattern><token>pathologisch-anatomisch</token></antipattern>
-               <antipattern><token>pats-boem</token></antipattern>
-               <antipattern><token>pedagogisch-didactisch</token></antipattern>
-               <antipattern><token>pensioen-loonspiraal</token></antipattern>
-               <antipattern><token>pianist-componist</token></antipattern>
-               <antipattern><token>pin-up</token></antipattern>
-               <antipattern><token>pkl-kandidaat</token></antipattern>
-               <antipattern><token>pkl-niveau</token></antipattern>
-               <antipattern><token>planning-en-controlcyclus</token></antipattern>
-               <antipattern><token>plein-air</token></antipattern>
-               <antipattern><token>plug-in</token></antipattern>
-               <antipattern><token>politiek-bestuurlijk</token></antipattern>
-               <antipattern><token>politiek-bureaucratisch</token></antipattern>
-               <antipattern><token>politiek-constitutioneel</token></antipattern>
-               <antipattern><token>politiek-cultureel</token></antipattern>
-               <antipattern><token>politiek-diplomatiek</token></antipattern>
-               <antipattern><token>politiek-economisch</token></antipattern>
-               <antipattern><token>politiek-filosofisch</token></antipattern>
-               <antipattern><token>politiek-financieel</token></antipattern>
-               <antipattern><token>politiek-ideologisch</token></antipattern>
-               <antipattern><token>politiek-juridisch</token></antipattern>
-               <antipattern><token>politiek-maatschappelijk</token></antipattern>
-               <antipattern><token>politiek-militair</token></antipattern>
-               <antipattern><token>politiek-moreel</token></antipattern>
-               <antipattern><token>politiek-psychologisch</token></antipattern>
-               <antipattern><token>politiek-religieus</token></antipattern>
-               <antipattern><token>politiek-sociaal</token></antipattern>
-               <antipattern><token>politiek-strategisch</token></antipattern>
-               <antipattern><token>politiek-wetenschappelijk</token></antipattern>
-               <antipattern><token>pop-ups</token></antipattern>
-               <antipattern><token>pop-up</token></antipattern>
-               <antipattern><token>positief-kritisch</token></antipattern>
-               <antipattern><token>post-it</token></antipattern>
-               <antipattern><token>pot-au-feu</token></antipattern>
-               <antipattern><token>practical-joker</token></antipattern>
-               <antipattern><token>president-commissaris</token></antipattern>
-               <antipattern><token>president-curator</token></antipattern>
-               <antipattern><token>president-diaken</token></antipattern>
-               <antipattern><token>president-directeur</token></antipattern>
-               <antipattern><token>prêt-à-porter</token></antipattern>
-               <antipattern><token>priester-dichter</token></antipattern>
-               <antipattern><token>priester-leraar</token></antipattern>
-               <antipattern><token>prijs-loonspiraal</token></antipattern>
-               <antipattern><token>prins-bisschop</token></antipattern>
-               <antipattern><token>prinses-gemalin</token></antipattern>
-               <antipattern><token>prins-gemaal</token></antipattern>
-               <antipattern><token>prins-regent</token></antipattern>
-               <antipattern><token>print-out</token></antipattern>
-               <antipattern><token>proces-verbaal</token></antipattern>
-               <antipattern><token>procureur-fiscaal</token></antipattern>
-               <antipattern><token>procureur-generaal</token></antipattern>
-               <antipattern><token>progressief-liberaal</token></antipattern>
-               <antipattern><token>protestants-christelijk</token></antipattern>
-               <antipattern><token>psychiater-seksuoloog</token></antipattern>
-               <antipattern><token>publiek-privaat</token></antipattern>
-               <antipattern><token>push-up</token></antipattern>
-               <antipattern><token>radicaal-links</token></antipattern>
-               <antipattern><token>radio-cassetterecorder</token></antipattern>
-               <antipattern><token>r&amp;b-album</token></antipattern>
-               <antipattern><token>rechter-commissaris</token></antipattern>
-               <antipattern><token>rechter-plaatsvervanger</token></antipattern>
-               <antipattern><token>rechts-conservatief</token></antipattern>
-               <antipattern><token>rechts-extreem</token></antipattern>
-               <antipattern><token>rechts-extremisme</token></antipattern>
-               <antipattern><token>rechts-liberaal</token></antipattern>
-               <antipattern><token>rechts-populisme</token></antipattern>
-               <antipattern><token>rechts-radicaal</token></antipattern>
-               <antipattern><token>rector-voorzitter</token></antipattern>
-               <antipattern><token>regisseur-acteur</token></antipattern>
-               <antipattern><token>regisseur-scenarist</token></antipattern>
-               <antipattern><token>rhythm-and-blues</token></antipattern>
-               <antipattern><token>romantisch-klassiek</token></antipattern>
-               <antipattern><token>rood-blauw</token></antipattern>
-               <antipattern><token>rood-oranje</token></antipattern>
-               <antipattern><token>rood-wit-blauw</token></antipattern>
-               <antipattern><token>rooms-blauw</token></antipattern>
-               <antipattern><token>rooms-koning</token></antipattern>
-               <antipattern><token>rooms-rood</token></antipattern>
-               <antipattern><token>round-up</token></antipattern>
-               <antipattern><token>rum-cola</token></antipattern>
-               <antipattern><token>runner-up</token></antipattern>
-               <antipattern><token>Russisch-orthodox</token></antipattern>
-               <antipattern><token>sbo-niveau</token></antipattern>
-               <antipattern><token>sbo-student</token></antipattern>
-               <antipattern><token>scenarist-regisseur</token></antipattern>
-               <antipattern><token>schilder-beeldhouwer</token></antipattern>
-               <antipattern><token>schilder-dichter</token></antipattern>
-               <antipattern><token>schout-bij-nacht</token></antipattern>
-               <antipattern><token>schrijver-dichter</token></antipattern>
-               <antipattern><token>schrijver-journalist</token></antipattern>
-               <antipattern><token>schrijver-politicus</token></antipattern>
-               <antipattern><token>schrijver-regisseur</token></antipattern>
-               <antipattern><token>secretariaat-generaal</token></antipattern>
-               <antipattern><token>secretaris-directeur</token></antipattern>
-               <antipattern><token>secretaris-generaal</token></antipattern>
-               <antipattern><token>secretaris-penningmeester</token></antipattern>
-               <antipattern><token>sergeant-majoor</token></antipattern>
-               <antipattern><token>sergeant-majoor-vlieger</token></antipattern>
-               <antipattern><token>set-upster</token></antipattern>
-               <antipattern><token>set-up</token></antipattern>
-               <antipattern><token>sf-film</token></antipattern>
-               <antipattern><token>shoot-out</token></antipattern>
-               <antipattern><token>sit-in</token></antipattern>
-               <antipattern><token>sit-up</token></antipattern>
-               <antipattern><token>s-klank</token></antipattern>
-               <antipattern><token>sleep-in</token></antipattern>
-               <antipattern><token>sociaal-artistiek</token></antipattern>
-               <antipattern><token>sociaal-cultureel</token></antipattern>
-               <antipattern><token>sociaal-demografisch</token></antipattern>
-               <antipattern><token>sociaal-economisch</token></antipattern>
-               <antipattern><token>sociaal-emotioneel</token></antipattern>
-               <antipattern><token>sociaal-maatschappelijk</token></antipattern>
-               <antipattern><token>sociaal-medisch</token></antipattern>
-               <antipattern><token>sociaal-politiek</token></antipattern>
-               <antipattern><token>sociaal-realistisch</token></antipattern>
-               <antipattern><token>sociaal-religieus</token></antipattern>
-               <antipattern><token>sociaal-ruimtelijk</token></antipattern>
-               <antipattern><token>socialistisch-realistisch</token></antipattern>
-               <antipattern><token>socialistisch-revolutionair</token></antipattern>
-               <antipattern><token>socialist-revolutionair</token></antipattern>
-               <antipattern><token>sous-vide</token></antipattern>
-               <antipattern><token>speler-coach</token></antipattern>
-               <antipattern><token>spring-in-'t-veld</token></antipattern>
-               <antipattern><token>staakt-het-vuren</token></antipattern>
-               <antipattern><token>stadhouder-koning</token></antipattern>
-               <antipattern><token>stand-in</token></antipattern>
-               <antipattern><token>staten-generaal</token></antipattern>
-               <antipattern><token>stay-up</token></antipattern>
-               <antipattern><token>step-in</token></antipattern>
-               <antipattern><token>ster-van-bethlehem</token></antipattern>
-               <antipattern><token>student-assistent</token></antipattern>
-               <antipattern><token>student-lid</token></antipattern>
-               <antipattern><token>studiemeester-opvoeder</token></antipattern>
-               <antipattern><token>substituut-griffier</token></antipattern>
-               <antipattern><token>substituut-officier</token></antipattern>
-               <antipattern><token>substituut-procureur</token></antipattern>
-               <antipattern><token>Syrisch-orthodox</token></antipattern>
-               <antipattern><token>tamboer-majoor</token></antipattern>
-               <antipattern><token>teach-in</token></antipattern>
-               <antipattern><token>technisch-economisch</token></antipattern>
-               <antipattern><token>technisch-juridisch</token></antipattern>
-               <antipattern><token>technisch-wetenschappelijk</token></antipattern>
-               <antipattern><token>t-groep</token></antipattern>
-               <antipattern><token>thesaurier-generaal</token></antipattern>
-               <antipattern><token>tip-in</token></antipattern>
-               <antipattern><token>toeristisch-recreatief</token></antipattern>
-               <antipattern><token>tolk-vertaler</token></antipattern>
-               <antipattern><token>trainer-coach</token></antipattern>
-               <antipattern><token>trainer-speler</token></antipattern>
-               <antipattern><token>tram-en-bushok</token></antipattern>
-               <antipattern><token>tranen-met-tuitentelevisie</token></antipattern>
-               <antipattern><token>trial-and-error</token></antipattern>
-               <antipattern><token>tso-richting</token></antipattern>
-               <antipattern><token>t-tag</token></antipattern>
-               <antipattern><token>tuner-versterker</token></antipattern>
-               <antipattern><token>tussen-n</token></antipattern>
-               <antipattern><token>tussen-s</token></antipattern>
-               <antipattern><token>twaalf-en-een-halfjarig</token></antipattern>
-               <antipattern><token>uitgever-boekhandelaar</token></antipattern>
-               <antipattern><token>u-raad</token></antipattern>
-               <antipattern><token>va-banque</token></antipattern>
-               <antipattern><token>vader-abt</token></antipattern>
-               <antipattern><token>vader-dochterrelatie</token></antipattern>
-               <antipattern><token>vader-zijn</token></antipattern>
-               <antipattern><token>verlies-en-winstrekening</token></antipattern>
-               <antipattern><token>vertaler-tolk</token></antipattern>
-               <antipattern><token>ver-van-mijn-bedshow</token></antipattern>
-               <antipattern><token>veteraan-minister</token></antipattern>
-               <antipattern><token>vicaris-generaal</token></antipattern>
-               <antipattern><token>viceminister-president</token></antipattern>
-               <antipattern><token>vicesecretaris-generaal</token></antipattern>
-               <antipattern><token>vind-ik-leuk</token></antipattern>
-               <antipattern><token>vof-akte</token></antipattern>
-               <antipattern><token>vol-au-vent</token></antipattern>
-               <antipattern><token>voorzitter-directeur</token></antipattern>
-               <antipattern><token>voorzitter-penningmeester</token></antipattern>
-               <antipattern><token>vorst-bisschop</token></antipattern>
-               <antipattern><token>vrijzinnig-democratisch</token></antipattern>
-               <antipattern><token>vrouw-zijn</token></antipattern>
-               <antipattern><token>vzw-wetgeving</token></antipattern>
-               <antipattern><token>waarom-vraag</token></antipattern>
-               <antipattern><token>web-only</token></antipattern>
-               <antipattern><token>wetenschappelijk-technisch</token></antipattern>
-               <antipattern><token>whisky-cola</token></antipattern>
-               <antipattern><token>whisky-soda</token></antipattern>
-               <antipattern><token>wij-cultuur</token></antipattern>
-               <antipattern><token>wij-gevoel</token></antipattern>
-               <antipattern><token>wijn-spijscombinatie</token></antipattern>
-               <antipattern><token>wij-vorm</token></antipattern>
-               <antipattern><token>wij-zij-denken</token></antipattern>
-               <antipattern><token>wij-zij-gevoel</token></antipattern>
-               <antipattern><token>wit-blauw</token></antipattern>
-               <antipattern><token>wit-rood</token></antipattern>
-               <antipattern><token>Wmo-raad</token></antipattern>
-               <antipattern><token>woon-bedrijfspand</token></antipattern>
-               <antipattern><token>woon-eetkamer</token></antipattern>
-               <antipattern><token>woon-werkverkeer</token></antipattern>
-               <antipattern><token>woon-winkelcentrum</token></antipattern>
-               <antipattern><token>work-out</token></antipattern>
-               <antipattern><token>www-winkelen</token></antipattern>
-               <antipattern><token>y-as</token></antipattern>
-               <antipattern><token>zanger-componist</token></antipattern>
-               <antipattern><token>zanger-gitarist</token></antipattern>
-               <antipattern><token>zanger-songwriter</token></antipattern>
-               <antipattern><token>zendeling-arts</token></antipattern>
-               <antipattern><token>zmok-plek</token></antipattern>
-               <antipattern><token>zoet-zout</token></antipattern>
-               <antipattern><token regexp="yes">zuur-base.*</token></antipattern>
-               <antipattern><token>zwart-geel</token></antipattern>
-               <antipattern><token regexp="yes">zwart-wit.*</token></antipattern>
-                <pattern>
-                    <marker>
-                        <token regexp="yes" case_sensitive="yes">.*[a-z]-[a-z].*<exception regexp="yes">.*(a-[aeiué]|[eé]-[éeiu]|i-[éeij]|o-[éeiou]|u-[iu]).*</exception></token>
-                    </marker>
-                </pattern>
-                <message>Ook als dit een correcte spelling is, is het koppelteken alleen aan te raden als het woord anders slecht leest of het tussen gelijkwaardige begrippen staat, of omdat het een 'mini-zin' is.".</message>
-                <example type="incorrect">De <marker>oven-deur</marker> staat open.</example>
-            </rule>
-        </rulegroup>
-    </category>
 	<category id="CASING" name="Hoofdletters">
-        <rulegroup id="NIEUW_ZEELAND" name="nieuw zeelander / Nieuw-Zeelander">
-            <!-- 2014-08-21 TaalTik regel komt vaak op, maar terecht, vooral bij afkortingen met een onterechte hoofdletter. -->
-            <rule>
-                <pattern>
-                    <marker>
-                        <token>nieuw</token>
-                        <token regexp="yes">zeeland.*</token>
-                    </marker>
-                </pattern>
-                <message>U bedoelt vast: <suggestion>Nieuw-<match no="2" case_conversion="startupper"/></suggestion>.</message>
-                <example correction="Nieuw-Zeelander">Mijn neef is een <marker>nieuw zeelander</marker>.</example>
-                <example>Mijn neef is een <marker>Nieuw-Zeelander</marker>.</example>
-            </rule>
-        </rulegroup>
+		
 		<rulegroup id="TST_HOOFDLETTERS_OVERBODIG" name="Woorden die ook klein geschreven mogen worden.">
 			<rule>
 				<pattern>
@@ -4540,7 +3753,7 @@ regexp case-insensitive maken : (?i)
 		</rulegroup>
 		<rulegroup id="MAANDEN" name="maanden hebben geen hoofdletter">
 			<rule>
-				<!-- 2014-08-21 TaalTik -->
+				<!--  2014-08-21 TaalTik  -->
 				<antipattern><token>van</token><token>der</token><token>Mei</token></antipattern>
 				<pattern case_sensitive="yes">
 					<token><exception postag="SENT_START"/></token>
@@ -4697,7 +3910,6 @@ regexp case-insensitive maken : (?i)
 				<url>http://taaladvies.net/taal/advies/vraag/821/</url>
 				<short>u</short>
 				<example correction="u">Bedoelt <marker>U</marker> dit?</example>
-                <example correction="u">Zuigt <marker>U</marker> zelf?</example>
 			</rule>
 		</rulegroup>
 		<rulegroup id="FRIES" name="Fries of fries">
@@ -4775,7 +3987,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="EIGENNAAM" name="eigennaam?">
-			<!-- 2014-08-21 TaalTik -->
+			<!-- 2014-08-21 TaalTik  -->
 			<rule>
 				<pattern case_sensitive="yes">
 					<token skip="1" negate="yes">een</token>
@@ -4791,34 +4003,6 @@ regexp case-insensitive maken : (?i)
 		</rulegroup>
 	</category>
 	<category id="COLLOQUIALISMS" name="Informeel">
-        <rulegroup id="EFFE" name="effe / even">
-            <rule>
-                <pattern>
-                    <token>effe</token>
-                </pattern>
-                <message>Dit is spreektaal. Beter is <suggestion>even</suggestion>.</message>
-                <example correction="even">Ik heb er <marker>effe</marker> tijd aan besteed.</example>
-            </rule>
-        </rulegroup>
-        <rulegroup id="EEN_BOEL" name="een boel / veel">
-            <rule>
-                <pattern>
-                    <token>een</token>
-                    <token regexp="yes">heleboel|boel</token>
-                </pattern>
-                <message>Dit is spreektaal. Beter is <suggestion>veel</suggestion>.</message>
-                <example correction="veel">Ik heb er <marker>een heleboel</marker> tijd aan besteed.</example>
-            </rule>
-        </rulegroup>
-        <rulegroup id="NIKS" name="niks / niets">
-            <rule>
-                <pattern>
-                    <token>niks</token>
-                </pattern>
-                <message>Dit is spreektaal. Beter is <suggestion>niets</suggestion>.</message>
-                <example correction="niets">Ik heb er <marker>niks</marker> aan.</example>
-            </rule>
-        </rulegroup>
 		<rulegroup id="GEEN_EEN" name="geen een">
 			<!-- 2014-08-23 TaalTik -->
 			<rule>
@@ -4826,13 +4010,13 @@ regexp case-insensitive maken : (?i)
 					<token>geen</token>
 					<token>een</token>
 				</pattern>
-				<message>Dit is spreektaal. Beter is <suggestion>niet een</suggestion> of <suggestion>geen enkele</suggestion>.</message>
+				<message>Dit  is spreektaal. Beter is <suggestion>niet een</suggestion> of <suggestion>geen enkele</suggestion>.</message>
 				<example correction="niet een|geen enkele">Ik heb er <marker>geen een</marker>.</example>
 				<example>Ik heb er <marker>niet een</marker>.</example>
 			</rule>
 		</rulegroup>
 		<rulegroup id="GEEN_EENS" name="geen eens">
-			<!-- 2014-08-23 TaalTik -->
+			<!-- 2014-08-23 TaalTik  -->
 			<rule>
 				<pattern>
 					<token>geen</token>
@@ -4862,7 +4046,7 @@ regexp case-insensitive maken : (?i)
 					<token>war</token>
 				</pattern>
 				<message>Juist is <suggestion>in de war</suggestion>.</message>
-				<url>https://nl.wikipedia.org/wiki/Contaminatie_%28taal%29</url>
+				<url>http://nl.wikipedia.org/wiki/Contaminatie_%28taal%29</url>
 				<example correction="in de war">Het ligt <marker>door de war</marker>.</example>
 				<example>Hij is <marker>in de war</marker>.</example>
 			</rule>
@@ -4875,7 +4059,7 @@ regexp case-insensitive maken : (?i)
 					<token skip="5">bezig</token>
 					<token>met</token>
 				</pattern>
-				<message>Bezig gaan met is geen Standaardnederlands. Het is 'bezig zijn' of 'aan de slag gaan'.</message>
+				<message>Bezig gaan met is geen Standaardnederlands Het is 'bezig zijn' of 'aan de slag gaan'.</message>
 				<url>http://taaladvies.net/taal/advies/vraag/1796/bezig_gaan_met/</url>
 				<example type="incorrect">Hij <marker>gaat bezig met</marker> de fout.</example>
 				<example>Hij <marker>is bezig met</marker>.</example>
@@ -4886,7 +4070,7 @@ regexp case-insensitive maken : (?i)
 					<token inflected="yes">gaan</token>
 					<token>met</token>
 				</pattern>
-				<message>Bezig gaan met is geen Standaardnederlands. Het is 'bezig zijn' of 'aan de slag gaan'.</message>
+				<message>Bezig gaan met is geen Standaardnederlands Het is 'bezig zijn' of 'aan de slag gaan'.</message>
 				<url>http://taaladvies.net/taal/advies/vraag/1796/bezig_gaan_met/</url>
 				<example type="incorrect">Hij wil weer <marker>bezig gaan met</marker> de fout.</example>
 				<example>Hij wil <marker>weer bezig zijn met</marker>.</example>
@@ -5196,7 +4380,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="MANAGEMENT" name="management → leiding" default="off">
-			<!-- 2014-08-20 TaalTik -->
+			<!--  2014-08-20 TaalTik -->
 			<rule>
 				<pattern>
 					<token>management</token>
@@ -5259,7 +4443,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="DESIGN" name="design → ontwerp">
-			<!-- 2014-08-21 TaalTik -->
+			<!-- 2014-08-21 TaalTik  -->
 			<rule>
 				<pattern case_sensitive="yes">
 					<token>design</token>
@@ -5302,7 +4486,7 @@ regexp case-insensitive maken : (?i)
 		</rulegroup>
 		<rulegroup id="CELEBRITY" name="celebrity → ster">
 			<rule>
-				<!-- 2014-08-23 TaalTik -->
+				<!-- 2014-08-23 TaalTik   -->
 				<pattern case_sensitive="yes">
 					<token inflected="yes">celebrity</token>
 				</pattern>
@@ -5470,7 +4654,7 @@ regexp case-insensitive maken : (?i)
 				<message>Bij \2 hoort meestal <suggestion>het</suggestion>; het kan ook een spatiefout zijn.</message>
 				<example correction="het">Ik loop in <marker>de veld</marker>.</example>
 			</rule>
-		</rulegroup>
+		</rulegroup>		
 		<!--
 		<rulegroup id="BEIDE_NN1" name="Beide impliceert meestal meervoud">
 		<rule>
@@ -5517,25 +4701,11 @@ regexp case-insensitive maken : (?i)
 						<token>die</token>
 					</marker>
 				</pattern>
-				<message>Het kan goed zijn dat hier <suggestion>dat</suggestion> moet staan.</message>
+				<message>Het kan god zijn dat hier <suggestion>dat</suggestion> moet staan.</message>
 				<example correction="dat">Ik zie het hondje <marker>die</marker> loopt.</example>
 			</rule>
 		</rulegroup>
-		<rulegroup id="WEDERKEREND" name="verplicht wederkerend werkwoord">
-			<rule>
-				<pattern>
-					<token postag="SENT_START" skip="-1"><exception scope="next" regexp="yes">zich|hem|ons|je|me|hen</exception></token>
-					<marker>
-						<token skip="-1" inflected="yes" regexp="yes">verslapen|eregeren|gedragen|ontfermen|schamen|uitsloven|vergissen|verschuilen|verslikken|verspreken|voornemen<exception scope="next" regexp="yes">zich|hem|ons|je|me|hen</exception></token>
-					</marker>
-					<token postag="SENT_END"><exception scope="current" regexp="yes">zich|hem|ons|je|me|hen</exception></token>
-				</pattern>
-				<message>Hier ontbreekt dat waar het werkwoord betrekking op heeft: 'zich'</message>
-				<short>wederkerend</short>
-				<example type="incorrect">Hij <marker>verslaapt</marker> weer.</example>
-				<example>Hij <marker>verslaapt</marker> zich.</example>
-			</rule>
-		</rulegroup>
+		
 	</category>
 	<category id="NOTATIES" name="Notaties">
 		<rulegroup id="EURO" name="Correcties rond euro">
@@ -5558,7 +4728,7 @@ regexp case-insensitive maken : (?i)
 				<pattern>
 					<token regexp="yes">€[0-9]{1,10}</token>
 				</pattern>
-				<message>Gebruik een spatie na de €: <suggestion><match no="1" regexp_match="([€])([0-9]{1,10})" regexp_replace="$1 $2"/></suggestion></message>
+				<message>Gebruik een spatie na de € :<suggestion><match no="1" regexp_match="([€])([0-9]{1,10})" regexp_replace="$1 $2"/></suggestion></message>
 				<url>http://taaladvies.net/taal/advies/tekst/114/wel_of_geen_spaties_voor_en_na_leestekens_en_symbolen_algemeen/#6</url>
 				<example correction="€ 10">Hij gaf mij <marker>€10</marker>.</example>
 				<example>Hij gaf mij <marker>€ 5</marker>.</example>
@@ -5571,7 +4741,7 @@ regexp case-insensitive maken : (?i)
 				<pattern>
 					<token regexp="yes">EUR[0-9]{1,10}</token>
 				</pattern>
-				<message>Gebruik een spatie na EUR: <suggestion><match no="1" regexp_match="(EUR)([0-9]{1,10})" regexp_replace="$1 $2"/></suggestion></message>
+				<message>Gebruik een spatie na EUR :<suggestion><match no="1" regexp_match="(EUR)([0-9]{1,10})" regexp_replace="$1 $2"/></suggestion></message>
 				<url>http://taaladvies.net/taal/advies/vraag/1178/euro_valutateken_voor_of_achter_het_bedrag/</url>
 				<example correction="EUR 10">Hij gaf mij <marker>EUR10</marker>.</example>
 				<example>Hij gaf mij <marker>€ 5</marker>.</example>
@@ -5754,7 +4924,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="TENEINDE" name="Teneinde → om">
-			<!-- 2014-08-22 -->
+			<!--  2014-08-22 -->
 			<rule>
 				<pattern>
 					<marker>
@@ -5781,7 +4951,7 @@ regexp case-insensitive maken : (?i)
 			</rule>
 		</rulegroup>
 		<rulegroup id="DES_MORGENS" name="des morgens etc.">
-			<!-- 2014-08-23 TaalTik -->
+			<!-- 2014-08-23 TaalTik  -->
 			<rule>
 				<pattern>
 					<token>des</token>
@@ -6490,7 +5660,7 @@ regexp case-insensitive maken : (?i)
 					<token>het</token>
 					<marker>
 					<token>gelukte</token>
-					</marker>
+					</marker>	
 				</pattern>
 				<message>Dit is ouderwets. Gebruik <suggestion>lukte</suggestion>.</message>
 				<url>https://onzetaal.nl/taaladvies/advies/ouderwets-taalgebruik</url>
@@ -6501,7 +5671,7 @@ regexp case-insensitive maken : (?i)
 					<token>het</token>
 					<marker>
 						<token>gelukt</token>
-					</marker>
+					</marker>	
 				</pattern>
 				<message>Dit is ouderwets. Gebruik <suggestion>lukt</suggestion>.</message>
 				<url>https://onzetaal.nl/taaladvies/advies/ouderwets-taalgebruik</url>
@@ -6511,7 +5681,7 @@ regexp case-insensitive maken : (?i)
 				<pattern>
 					<marker>
 						<token>gelukken</token>
-					</marker>
+					</marker>	
 				</pattern>
 				<message>Dit is ouderwets. Gebruik <suggestion>lukken</suggestion>.</message>
 				<url>https://onzetaal.nl/taaladvies/advies/ouderwets-taalgebruik</url>
@@ -6702,7 +5872,7 @@ regexp case-insensitive maken : (?i)
 		</rulegroup>
 		<rulegroup id="AANVANGEN" name="aanvangen">
 			<rule>
-				<antipattern><token>aanvang</token></antipattern>
+				<antipattern><token>aanvang</token></antipattern> 
 				<pattern>
 					<token inflected="yes">aanvangen</token>
 				</pattern>
@@ -7548,7 +6718,7 @@ regexp case-insensitive maken : (?i)
 		<!--
 		<rule id="BERISPEN" name="berispen">
 		<pattern>
-		<token inflected="yes">berispen</token>
+		<token  inflected="yes">berispen</token>
 		</pattern>
 		<message>
 		De tekst wordt vlotter als je deze herschrijft met
@@ -7610,7 +6780,7 @@ regexp case-insensitive maken : (?i)
 		<!--
 		<rule id="BESTRIJKEN" name="bestrijken">
 		<pattern>
-		<token inflected="yes">bestrijken</token>
+		<token  inflected="yes">bestrijken</token>
 		</pattern>
 		<message>
 		De tekst wordt vlotter als je deze herschrijft met
@@ -7985,7 +7155,8 @@ regexp case-insensitive maken : (?i)
 				</pattern>
 				<message>De tekst wordt vlotter als je deze herschrijft met <suggestion>ongeveer</suggestion>.</message>
 				<url>https://onzetaal.nl/taaladvies/ouderwets-taalgebruik</url>
-				<example correction="ongeveer">De verwerkingstijd is <marker>circa</marker> 7 minuten.</example>
+				<example correction="ongeveer">A <marker>circa</marker> B.</example>
+				<example>A <marker>ongeveer</marker>.</example>
 			</rule>
 		</rulegroup>
 		<rulegroup id="CITYMARKETING" name="citymarketing">
@@ -9477,7 +8648,7 @@ regexp case-insensitive maken : (?i)
 				<url>https://onzetaal.nl/taaladvies/ouderwets-taalgebruik</url>
 				<example correction="toestemming|goedkeuring">A geeft <marker>fiat</marker> B.</example>
 				<example>A geeft <marker>toestemming</marker>.</example>
-			</rule>
+			</rule>         
 		</rulegroup>
 		<rulegroup id="FIATTEREN" name="fiatteren">
 			<rule>
@@ -10506,7 +9677,7 @@ regexp case-insensitive maken : (?i)
 				<pattern>
 					<token>in</token><token>de</token><token>trant</token><token>van</token>
 				</pattern>
-				<message>De tekst wordt vlotter als je deze herschrijft met <suggestion>zo</suggestion>, <suggestion>zoals</suggestion> of <suggestion>als</suggestion>.</message>
+				<message>De tekst wordt vlotter als je deze herschrijft met <suggestion>zo</suggestion>, <suggestion>zoals</suggestion> of  <suggestion>als</suggestion>.</message>
 				<url>https://onzetaal.nl/taaladvies/ouderwets-taalgebruik</url>
 				<example correction="zo|zoals|als">A <marker>in de trant van</marker> B.</example>
 				<example>A <marker>zo</marker>.</example>
@@ -10640,7 +9811,7 @@ regexp case-insensitive maken : (?i)
 				<pattern>
 					<token>ingevolge</token>
 				</pattern>
-				<message>De tekst wordt vlotter als je deze herschrijft met <suggestion>door</suggestion> of <suggestion>op grond van</suggestion> of <suggestion>als gevolg van</suggestion>.</message>
+				<message>De tekst wordt vlotter als je deze herschrijft met <suggestion>door</suggestion> of <suggestion>op grond van</suggestion> of  <suggestion>als gevolg van</suggestion>.</message>
 				<url>https://onzetaal.nl/taaladvies/ouderwets-taalgebruik</url>
 				<example correction="door|op grond van|als gevolg van">A <marker>ingevolge</marker> B.</example>
 				<example>A <marker>door</marker>.</example>
@@ -11921,8 +11092,8 @@ regexp case-insensitive maken : (?i)
 					<token postag="WKW:AVW"><exception negate_pos="yes" postag="WKW:AVW"/></token>
 				</pattern>
 				<message>Als dit een typefout is, dan moet het vast <suggestion><match no="1" postag="WKW:TGW:INF" postag_regexp="yes"/></suggestion> zijn. Is het een aanvoegende wijs of een ander ouderwetse vorm, dan graag moderniseren.</message>
-				<example correction="blijven">Davy mag <marker>blijve</marker>.</example>
-				<example>Davy mag <marker>blijven</marker>.</example>
+				<example correction="mogen">A <marker>moge</marker> B.</example>
+				<example>A <marker>mogen</marker>.</example>
 			</rule>
 		</rulegroup>
 		<rulegroup id="MOGE" name="moge">
@@ -13533,7 +12704,7 @@ regexp case-insensitive maken : (?i)
 				</pattern>
 				<message>De tekst wordt vlotter als je deze herschrijft met <suggestion>en</suggestion> of <suggestion>of</suggestion>.</message>
 				<url>https://onzetaal.nl/taaladvies/ouderwets-taalgebruik</url>
-				<example correction="en|of">Ze zijn <marker>respectievelijk</marker> 15 en 17 jaar oud.</example>
+				<example correction="en|of">A <marker>respectievelijk</marker> B.</example>
 				<example>A <marker>en</marker>.</example>
 			</rule>
 		</rulegroup>
@@ -14018,7 +13189,7 @@ regexp case-insensitive maken : (?i)
 				<example>A <marker>werkgroep</marker>.</example>
 			</rule>
 		</rulegroup>
-		<!-- needs dection of place names. case?
+		<!--   needs dection of place names. case?
 		<rule id="TE_(BREDA/LEEUWARDEN/_VENLO/...)" name="te (Breda/Leeuwarden/ Venlo/...)">
 		<pattern>
 		<token>te</token><token>(Breda/Leeuwarden/</token><token>Venlo/...)</token>
@@ -14119,7 +13290,7 @@ regexp case-insensitive maken : (?i)
 				<example>A <marker>over</marker>.</example>
 			</rule>
 		</rulegroup>
-		<!-- lijkt niet zinvol   is ook ter attentie van ....
+		<!-- lijkt niet zinvol   is ook ter attentie van ....   
 		<rulegroup id="T_A_V" name="t.a.v.">
 		<rule>
 		<pattern>
@@ -14283,7 +13454,8 @@ regexp case-insensitive maken : (?i)
 				</pattern>
 				<message>De tekst wordt vlotter als je deze herschrijft met <suggestion>maar niet als</suggestion>.</message>
 				<url>https://onzetaal.nl/taaladvies/ouderwets-taalgebruik</url>
-				<example correction="Maar niet als"><marker>Tenzij</marker> de arts anders voorschrijft.</example>
+				<example correction="maar niet als">A <marker>tenzij</marker> B.</example>
+				<example>A <marker>maar niet als</marker>.</example>
 			</rule>
 		</rulegroup>
 		<rulegroup id="TE_ONZENT" name="te onzent">
@@ -16059,7 +15231,7 @@ regexp case-insensitive maken : (?i)
 					<token>weide</token>
 					<token>wereld</token>
 				</pattern>
-				<message>U bedoelt vast: <suggestion>wijde wereld</suggestion>.</message>
+				<message>U bedoelt vast : <suggestion>wijde wereld</suggestion>.</message>
 				<example correction="wijde wereld">Ik kijk naar de <marker>weide wereld</marker>.</example>
 			</rule>
 		</rulegroup>
@@ -16301,8 +15473,6 @@ regexp case-insensitive maken : (?i)
 				<message>Woorden als '<match no="1"/>' kunnen een tekst vaag maken.</message>
 				<example type="incorrect">Deze zin is <marker>ergens</marker> wel vaag hoor!</example>
 				<example>Deze zin is <marker>wel duidelijk</marker>.</example>
-				<example type="incorrect"><marker>Misschien</marker> dat je daar iets mee kunt?</example>
-				<example type="incorrect">Hoe kom ik hier <marker>ooit</marker> doorheen?</example>
 			</rule>
 		</rulegroup>
 		
@@ -16315,20 +15485,10 @@ regexp case-insensitive maken : (?i)
 				<pattern>
 					<token regexp="yes">vreselijk|enorm|^(mega|ultra|super|giga).*</token>
 				</pattern>
-				<message>Is dit niet overdreven?</message>
+				<message>Is hier wellicht sprake van overdrijving?</message>
 				<example type="incorrect">Het is een <marker>gigantisch</marker> probleem.</example>
 				<example>Het is <marker>een</marker> probleem.</example>
-				<example type="incorrect"><marker>Super</marker> interessant voor mij dit boek!</example>
-				<example type="incorrect">Ook in andere kerken was de schade <marker>enorm</marker>.</example>
 			</rule>
-            <rule>
-                <pattern>
-                    <token>heel</token>
-                    <token postag_regexp="yes" postag="BNW.*"/>
-                </pattern>
-                <message>Is dit niet overdreven? Is <suggestion>\2</suggestion> niet voldoende?</message>
-                <example correction="dikke">Het is een <marker>heel dikke</marker> man.</example>
-            </rule>
 		</rulegroup>
 		
 	</category>
@@ -16352,17 +15512,6 @@ regexp case-insensitive maken : (?i)
 		
 	</category>
 	<category id="VASTE_UITDRUKKINGEN" name="Vaste uitdrukkingen">
-		<rulegroup id="NAAR_VERLOOP" name="naar verloop van / na verloop van">
-			<rule>
-				<pattern>
-					<token>naar</token>
-					<token>verloop</token>
-					<token>van</token>
-				</pattern>
-				<message>Dit moet zijn: <suggestion>na \2 \3</suggestion>.</message>
-				<example correction="na verloop van">Het is <marker>naar verloop van</marker> tijd goed.</example>
-			</rule>
-		</rulegroup>
 		<rulegroup id="AD_HOC_X" name="ad hoc in samenstelling">
 			<rule>
 				<!--
@@ -16373,7 +15522,7 @@ regexp case-insensitive maken : (?i)
 					<token>ad</token>
 					<token regexp="yes">hoc.+</token>
 				</pattern>
-				<message>Hier hoor een koppelteken: <suggestion>ad-<match no="2"/></suggestion>.</message>
+				<message>Hier hoor een koppelteken :<suggestion>ad-<match no="2"/></suggestion>.</message>
 				<url>https://onzetaal.nl/taaladvies/advies/ad-hoc-oplossing</url>
 				<example correction="ad-hocbasis">Dat is op <marker>ad hocbasis</marker>.</example>
 			</rule>
@@ -16410,6 +15559,10 @@ regexp case-insensitive maken : (?i)
 		
 		<rulegroup id="M" name="'m">
 			<rule>
+				<!--
+				2014-08-22 TaalTik
+				regel werkt goed
+				-->
 				<pattern>
 					<token regexp="yes">'|‘</token>
 					<token>m</token>
@@ -16713,7 +15866,7 @@ regexp case-insensitive maken : (?i)
 					<marker>
 						<token postag="WKW:VLT:1EP" regexp="yes">.*(tt|dd)e$<exception postag="WKW:VTD:ONV"/><exception>kostte</exception></token>
 					</marker>
-					<token postag=".*ZNW.*" postag_regexp="yes"><exception regexp="yes">ons|niet|voor|wel</exception></token>
+					<token postag=".*ZNW.*" postag_regexp="yes"><exception regexp="yes">ons|niet|voor|wel</exception></token> 
 				</pattern>
 				<message>U bedoelt vast <suggestion><match no="2" regexp_match="(.e)$" regexp_replace="e"/></suggestion></message>
 				<example correction="verbrande">Zie de <marker>verbrandde</marker> fiets.</example>
@@ -16758,7 +15911,7 @@ regexp case-insensitive maken : (?i)
 				<example><marker>Ik loop</marker> verder.</example>
 			</rule>
 		</rulegroup>
-		<rulegroup id="ZICH_INBEELD" name="zich inbeeld → zich inbeeldt">
+		<rulegroup id="ZICH_INBEELD" name="zich inbeeld  → zich inbeeldt">
 			<rule>
 				<!-- created 2017-06-22 by TaalTik -->
 				<pattern>
@@ -16853,7 +16006,7 @@ regexp case-insensitive maken : (?i)
 					<token>een</token>
 					<marker>
 						<token postag="WKW:TGW:3EP"><exception postag="WKW:VTD:ONV"/><exception regexp="yes">koopt|wordt|wilt|reset|uit|is|heeft|kan</exception></token>
-						<token postag="ZNW:EKV:.*" postag_regexp="yes"/>
+						<token postag="NN1.*" postag_regexp="yes"/>
 					</marker>
 				</pattern>
 				<message>U bedoelt vast: <suggestion><match no="2" postag="WKW:VTD:ONV"/> \3</suggestion>. Er kan ook een spatiefout staan: <suggestion>\2\3</suggestion>.</message>
@@ -17391,7 +16544,7 @@ regexp case-insensitive maken : (?i)
 		<token>name</token>
 		</marker>
 		</pattern>
-		<message>Verwacht werd <suggestion>ten <match no="2"></match></suggestion>, <suggestion>met <match no="2"></match></suggestion> of <suggestion>namen</suggestion>. </message>
+		<message>Verwacht werd <suggestion>ten <match no="2"></match></suggestion>, <suggestion>met <match no="2"></match></suggestion>  of <suggestion>namen</suggestion>. </message>
 		<short>Ouderwets</short>
 		<example type="incorrect">Het zijn twee <marker>name</marker>.</example>
 		<example>Het is met <marker>name</marker> verdacht.</example>
@@ -17713,127 +16866,13 @@ regexp case-insensitive maken : (?i)
 		</rule>
 		</rulegroup>
 		-->
-
-        <rulegroup id="LOSSE_LETTERS" name="losse letters verbeteren">
-            <rule>
-                <antipattern case_sensitive="yes"><token>B</token><token>en</token><token>W</token></antipattern>
-                <pattern>
-                    <token>b</token>
-                    <token regexp="yes">&amp;|en</token>
-                    <token>w</token>
-                </pattern>
-                <message>Burgemeester en wethouders schrijf je als <suggestion>B en W</suggestion>.</message>
-                <example correction="B en W">De zaak ligt voor bij <marker>b en w</marker>.</example>
-                <example correction="B en W">De zaak ligt voor bij <marker>b &amp; w</marker>.</example>
-
-            </rule>
-            <rule>
-                <pattern>
-                    <marker>
-                        <token case_sensitive="yes">a</token>
-                    </marker>
-                    <token regexp="yes">[0-9]+|eur|f|fl|€</token>
-                </pattern>
-                <message>Bij een bedrag is het <suggestion>à</suggestion>.</message>
-                <example correction="à">Het is te koop <marker>a</marker> 50 euro.</example>
-                <example>Het was te koop <marker>à</marker> 10 gulden.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <marker>
-                        <token regexp="yes">f|fl</token>
-                    </marker>
-                    <token regexp="yes">[0-9].*</token>
-                </pattern>
-                <message>Voor de gulden was er een apart symbool: <suggestion>ƒ</suggestion>.</message>
-                <example correction="ƒ">Het is <marker>fl</marker> 50.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <token regexp="yes">.*[aiouy]$</token>
-                    <token case_sensitive="yes">s</token>
-                </pattern>
-                <message>Bent u een apostrof vergeten? <suggestion>\1's</suggestion>.</message>
-                <example correction="auto's">De <marker>auto s</marker> reden weg.</example>
-                <example>De <marker>baby's</marker> maakten lawaai.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <token regexp="yes" negate="yes">[0-9]*</token>
-                    <marker>
-                        <token case_sensitive="yes">m</token>
-                    </marker>
-                </pattern>
-                <message>Bent u een apostrof vergeten? Of beter nog, schrijf <suggestion>hem</suggestion>.</message>
-                <example correction="hem">Het is <marker>m</marker> toch.</example>
-                <example>Het is <marker>hem</marker> niet.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <token case_sensitive="yes">z</token>
-                    <token case_sensitive="yes">n</token>
-                </pattern>
-                <message>Bent u een apostrof vergeten? <suggestion>z'n</suggestion>.</message>
-                <example correction="z'n">Het is <marker>z n</marker> fout.</example>
-                <example>Het is <marker>z'n</marker> correctie.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <token negate="yes" case_sensitive="yes">z</token>
-                    <marker>
-                        <token case_sensitive="yes">n</token>
-                    </marker>
-                </pattern>
-                <message>Bent u een apostrof vergeten? Of beter nog, schrijf <suggestion>een</suggestion>.</message>
-                <example correction="een">Het is <marker>n</marker> vreemd verschijnsel.</example>
-                <example>Het is een <marker>een</marker> correctie.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <token regexp="yes" negate="yes">[0-9]*</token>
-                    <marker>
-                        <token case_sensitive="yes">m</token>
-                    </marker>
-                </pattern>
-                <message>Bent u een apostrof vergeten? Of beter nog, schrijf <suggestion>hem</suggestion>.</message>
-                <example correction="hem">Het is <marker>m</marker> toch.</example>
-                <example>Het is <marker>hem</marker> niet.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <token case_sensitive="yes">r</token>
-                </pattern>
-                <message>Bent u een apostrof vergeten? Of beter nog, schrijf <suggestion>haar</suggestion>.</message>
-                <example correction="haar">Het is <marker>r</marker> toch.</example>
-                <example>Het is <marker>haar</marker> niet.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <token case_sensitive="yes">x</token>
-                </pattern>
-                <message>Bij een wiskundige vermenigvuldiging gebruik je een <suggestion>×</suggestion>, in een programmeertaal een <suggestion>*</suggestion>, bij afmetingen is <suggestion>bij</suggestion> mogelijk.</message>
-                <example correction="×|*|bij" >50 <marker>x</marker> 5 is 250.</example>
-            </rule>
-        </rulegroup>
-		<rulegroup id="ONTWARBAAR" name="ontwarbaar → onontwarbaar">
-			<rule>
-				<pattern>
-					<token regexp="yes" negate="yes">niet|nauwelijks|moeilijk|lastig</token>
-					<marker>
-						<token regexp="yes">ont(warbaar|warbare)</token>
-					</marker>
-				</pattern>
-				<message>Wanneer u bedoelt dat het lastig is, dan bedoelt u<suggestion>onontwarbaar</suggestion>.</message>
-				<example correction="onontwarbaar">Het is een <marker>ontwarbare</marker> kluwen.</example>
-				<example>Het is een <marker>onontwarbare</marker> kluwen.</example>
-			</rule>
-		</rulegroup>
+		
 		<rulegroup id="IN_DE_LAG" name="in de lag → in de lach">
 			<rule>
 				<pattern>
-					<token>in</token>
-					<token>de</token>
-					<token>lag</token>
+					<token>in</token>	
+					<token>de</token>	
+					<token>lag</token>	
 				</pattern>
 				<message>U bedoelt vast <suggestion>in de lach</suggestion>.</message>
 				<example correction="in de lach">Ik schiet <marker>in de lag</marker> fout.</example>
@@ -17843,8 +16882,8 @@ regexp case-insensitive maken : (?i)
 		<rulegroup id="AD_RANDOM" name="ad random → at random">
 			<rule>
 				<pattern>
-					<token>ad</token>
-					<token>random</token>
+					<token>ad</token>	
+					<token>random</token>	
 				</pattern>
 				<message>U bedoelt vast <suggestion>at random</suggestion>, of beter nog: <suggestion>willekeurig</suggestion>.</message>
 				<example correction="at random|willekeurig">Het gaat <marker>ad random</marker> fout.</example>
@@ -17854,13 +16893,13 @@ regexp case-insensitive maken : (?i)
 		<rulegroup id="HET_ZEI_ZO" name="het zei zo → het zij zo">
 			<rule>
 				<pattern>
-					<token regexp="yes">het|dit|dat</token>
+					<token regexp="yes">het|dit|dat</token>	
 					<marker>
-					<token>zei</token>
+					<token>zei</token>	
 				</marker>
-					<token>zo</token>
+					<token>zo</token>	
 				</pattern>
-				<message>U bedoelt vast: \1 <suggestion>zij</suggestion> zo.</message>
+				<message>U bedoelt vast : \1 <suggestion>zij</suggestion> zo.</message>
 				<url>https://onzetaal.nl/taaladvies/het-zij-zo-het-zei-zo/</url>
 				<example correction="zij">Het <marker>zei</marker> zo.</example>
 				<example>Het <marker>zij</marker>zo.</example>
@@ -17869,11 +16908,11 @@ regexp case-insensitive maken : (?i)
 		<rulegroup id="METEN_PERSEN" name="meten en persen → Meden en Perzen">
 			<rule>
 				<pattern>
-					<token>wet</token>
-					<token>van</token>
-					<token>meten</token>
-					<token>en</token>
-					<token>persen</token>
+					<token>wet</token>	
+					<token>van</token>	
+					<token>meten</token>	
+					<token>en</token>	
+					<token>persen</token>	
 				</pattern>
 				<message>Dit kan grappig bedoeld zijn, maar ook gewoon fout van: <suggestion>wet van Meden en Perzen</suggestion>.</message>
 				<url>https://onzetaal.nl/taaladvies/dat-is-geen-wet-van-meden-en-perzen/</url>
@@ -17885,7 +16924,7 @@ regexp case-insensitive maken : (?i)
 			<rule>
 				<pattern>
 					<marker>
-						<token regexp="yes">baadt|baad</token>
+						<token regexp="yes">baadt|baad</token>	
 					</marker>
 					<token regexp="yes">het|dit|dat</token>
 					<token>niet</token>
@@ -17918,7 +16957,7 @@ regexp case-insensitive maken : (?i)
 				<example correction="saaie bedoening">Dit is een <marker>saaie bedoeling</marker>.</example>
 				<example>Het is een <marker>saaie bedoening</marker>.</example>
 			</rule>
-		</rulegroup>
+		</rulegroup>	
 		
 		<!-- TaalTik 2017-09-11 -->
 		<rulegroup id="HUISHOUDELIJK_GEWELD" name="Huishoudelijk geweld of huiselijk geweld">
@@ -17927,7 +16966,7 @@ regexp case-insensitive maken : (?i)
 					<token>huishoudelijk</token>
 					<token>geweld</token>
 				</pattern>
-				<message>U bedoelt vast: <suggestion>huiselijk geweld</suggestion>.</message>
+				<message>U bedoelt vast : <suggestion>huiselijk geweld</suggestion>.</message>
 				<example correction="huiselijk geweld">Het <marker>huishoudelijk geweld</marker> wordt erger.</example>
 			</rule>
 		</rulegroup>
@@ -18113,7 +17152,6 @@ regexp case-insensitive maken : (?i)
 				<message>Meerdere ontkenningen maken de tekst moeilijker te begrijpen.</message>
 				<example type="incorrect">Ik doe <marker>nooit geen</marker> jas aan.</example>
 				<example>Ik doe <marker>altijd</marker> een jas aan.</example>
-				<example type="incorrect">Gebruik <marker>geen enkele post niet</marker> missen!</example>
 			</rule>
 		</rulegroup>
 		
@@ -18243,7 +17281,7 @@ regexp case-insensitive maken : (?i)
 				<example><marker>Kunt</marker> u het even doen voor mij?.</example>
 			</rule>
 			
-			<rule>
+			<rule> 
 				<!-- 2014-08-21 TaalTik -->
 				<pattern>
 					<token regexp="yes">je|u</token>
@@ -18367,7 +17405,7 @@ regexp case-insensitive maken : (?i)
 				<pattern>
 					<marker>
 						<token>uw</token>
-					</marker>
+					</marker>	
 					<token>beider</token>
 					<token>belang</token>
 				</pattern>
@@ -18694,11 +17732,11 @@ regexp case-insensitive maken : (?i)
 				</pattern>
 				<message>U bedoelt vast
 					<suggestion><match no="1"/> <match no="2"/> baten <match no="4"/></suggestion>,
-					<suggestion><match no="1"/> ten bate van</suggestion> of
+					<suggestion><match no="1"/> ten  bate van</suggestion> of
 					<suggestion>te <match no="2"/> bate <match no="4"/></suggestion>
 					. Moderniseren is overigens beter.</message>
 				<url>https://onzetaal.nl/taaladvies/advies/staande-uitdrukkingen</url>
-				<example correction="ter mijnen baten gedaan|ter ten bate van|te mijnen bate gedaan">Het was <marker>ter mijnen bate gedaan</marker>.</example>
+				<example correction="ter mijnen baten gedaan|ter ten  bate van|te mijnen bate gedaan">Het was <marker>ter mijnen bate gedaan</marker>.</example>
 				<example>Het is <marker>te zijnen bate gedaan</marker>.</example>
 			</rule>
 		</rulegroup>
@@ -18873,8 +17911,8 @@ regexp case-insensitive maken : (?i)
 				<antipattern><token>plaats</token><token>des</token><token>onheils</token></antipattern>
 				<antipattern><token>steen</token><token>des</token><token>aanstoots</token></antipattern>
 				<antipattern><token>stem</token><token>des</token><token>volks</token></antipattern>
-				<antipattern><token/><token>des</token><token>te</token></antipattern>
-				<antipattern case_sensitive="yes"><token>DES</token></antipattern>
+				<antipattern><token/><token>des</token><token>te</token></antipattern> 
+				<antipattern case_sensitive="yes"><token>DES</token></antipattern> 
 				<pattern>
 					<token/>
 					<marker>
@@ -18899,9 +17937,9 @@ regexp case-insensitive maken : (?i)
 				<antipattern><token>in</token><token>der</token><token>eeuwigheid</token></antipattern>
 				<antipattern><token>naam</token><token>der</token><token>wet</token></antipattern>
 				<antipattern><token>aard</token><token>der</token><token>zaak</token></antipattern>
-				<antipattern><token>van</token><token>der</token><token/></antipattern> <!-- eigennamen uitsluiten -->
+				<antipattern><token>van</token><token>der</token><token/></antipattern>  <!-- eigennamen uitsluiten -->
 				<antipattern><token>Koninkrijk</token><token>der</token><token>Nederlanden</token></antipattern>
-				<antipattern case_sensitive="yes"><token/><token>Der</token><token regexp="yes">[A-Z].*</token></antipattern> <!-- eigennamen uitsluiten -->
+				<antipattern case_sensitive="yes"><token/><token>Der</token><token regexp="yes">[A-Z].*</token></antipattern>  <!-- eigennamen uitsluiten -->
 				<antipattern><token>lof</token><token>der</token><token>zotheid</token></antipattern>
 				
 				<!-- TODO Afraden van al deze ouderwetsigheid -->
@@ -18986,7 +18024,7 @@ regexp case-insensitive maken : (?i)
 				<message>In moderne teksten past geen '\1' buiten staande uitdrukkingen. Corrigeer de staande uitdrukking of moderniseer de tekst.</message>
 				<url>https://onzetaal.nl/taaladvies/advies/staande-uitdrukkingen</url>
 				<short>staande uitdrukking</short>
-				<example type="incorrect">Het is te <marker>uwer</marker> info.</example>
+				<example type="incorrect">Het is  te <marker>uwer</marker> info.</example>
 				<example>Het is om te <marker>uwer</marker> informatie.</example>
 			</rule>
 		</rulegroup>
@@ -19005,7 +18043,7 @@ regexp case-insensitive maken : (?i)
 				<message>In moderne teksten past geen '\2' buiten staande uitdrukkingen. Corrigeer de staande uitdrukking of moderniseer de tekst.</message>
 				<url>https://onzetaal.nl/taaladvies/advies/staande-uitdrukkingen</url>
 				<short>staande uitdrukking</short>
-				<example type="incorrect">Het is te <marker>uwen</marker> behoeven.</example>
+				<example type="incorrect">Het is  te <marker>uwen</marker> behoeven.</example>
 				<example>Het is te <marker>uwen</marker> behoeve.</example>
 			</rule>
 		</rulegroup>
@@ -19955,7 +18993,7 @@ regexp case-insensitive maken : (?i)
 					<token>mond</token>
 					<token>reclame</token>
 				</pattern>
-				<message>U bedoelt: <suggestion>\1-tot-\3\4</suggestion> of <suggestion>\1-tot-\3-\4</suggestion></message>
+				<message>U bedoelt : <suggestion>\1-tot-\3\4</suggestion> of <suggestion>\1-tot-\3-\4</suggestion></message>
 				<url>https://onzetaal.nl/taaladvies/advies/twee-onder-een-kap-woning</url>
 				
 				<example correction="mond-tot-mondreclame|mond-tot-mond-reclame">Dit is een <marker>mond op mond reclame</marker>.</example>
@@ -20606,6 +19644,7 @@ regexp case-insensitive maken : (?i)
 		<rulegroup id="WIJ_ZIJ_MIJ" name="Wij, zij, jij → we, ze, je, me">
 			<rule>
 				<!-- 2014-09-08 TaalTik
+				nieuw
 				advies wordt wel vaak vertoond, maar is ook vaak wel van toepassing.
 				-->
 				<pattern>
@@ -20615,10 +19654,7 @@ regexp case-insensitive maken : (?i)
 					<url>https://onzetaal.nl/taaladvies/advies/wij-we</url>
 					<short>Nadruk?</short>
 					<example correction="We"><marker>Wij</marker> vinden het fout.</example>
-					<example correction="We"><marker>Wij</marker> geven u een schatting van de kosten.</example>
 					<example><marker>We</marker> vinden het goed.</example>
-					<example correction="Ze"><marker>Zij</marker> vinden er hun tweede huis.</example>
-
 				</rule>
 			</rulegroup>
 			
@@ -20646,9 +19682,7 @@ regexp case-insensitive maken : (?i)
 					</pattern>
 					<message>Zulke korte zinnen zijn zeldzaam, incompleet en ongebruikelijk in officiële tekst.</message>
 					<example type="incorrect"><marker>Hij doet.</marker></example>
-					<example>Hij kan het.</example>
-					<example type="incorrect"><marker>Vergeet het.</marker></example>
-					<example type="incorrect"><marker>Geweldig artikel!</marker></example>
+					<example>Hij kan het</example>
 				</rule>
 			</rulegroup>
 			
@@ -20797,7 +19831,7 @@ regexp case-insensitive maken : (?i)
 				</rule>
 			</rulegroup>
 			
-			<rulegroup id="SCHERPST_VAN_DE_SNEDE" name="Scherpst van de snede → scherp van de snede">
+			<rulegroup id="SCHERPST_VAN_DE_SNEDE" name="Scherpst van de snede  → scherp van de snede">
 				<rule>
 					<!-- TaalTik, 2014-10-03, nieuw -->
 					<pattern>
@@ -22206,7 +21240,7 @@ regexp case-insensitive maken : (?i)
 				</rule>
 			</rulegroup>
 			
-			<rulegroup id="LIBER_AMORICUM" name="Liber amoricum → liber amicorum">
+			<rulegroup id="LIBER_AMORICUM" name="Liber amoricum  → liber amicorum">
 				<rule>
 					<!-- TaalTik, 2014-10-03, nieuw -->
 					<pattern>
@@ -22564,22 +21598,7 @@ regexp case-insensitive maken : (?i)
 					<example>"Dat is vreemd", zegt hij.</example>
 				</rule>
 			</rulegroup>
-
-        <rulegroup id="SPATIE_LEESTEKEN" name="spatie voor leesteken schrappen">
-            <rule>
-                <pattern>
-                    <token/>
-                    <token spacebefore="yes" regexp="yes">[!?;,:]</token>
-                </pattern>
-                <message>Voor een uitroepteken hoort geen spatie<suggestion>\1\2</suggestion></message>
-                <short>!</short>
-                <example correction="fout!">Dit is <marker>fout !</marker></example>
-                <example correction="fout?">Is dit <marker>fout ?</marker></example>
-                <example correction="fout,">Dit is <marker>fout ,</marker> toch?</example>
-            </rule>
-        </rulegroup>
-
-        <rulegroup id="GEDACHTESTREEPJE" name="- → —">
+			<rulegroup id="GEDACHTESTREEPJE" name="- → —">
 				<rule>
 					<!-- TaalTik 2014-09-18 -->
 					<pattern>
@@ -22731,4 +21750,5 @@ regexp case-insensitive maken : (?i)
 				</rule>
 			</rulegroup>
 		</category>
-	</rules>
+
+  </rules>

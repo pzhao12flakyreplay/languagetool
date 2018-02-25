@@ -28,7 +28,7 @@ import java.util.Set;
  * @since 3.7
  */
 @Experimental
-class InputSentence {
+public class InputSentence {
 
   private final String text;
   private final Language lang;
@@ -38,7 +38,7 @@ class InputSentence {
   private final Set<String> enabledRules;
   private final Set<CategoryId> enabledRuleCategories;
   
-  InputSentence(String text, Language lang, Language motherTongue,
+  public InputSentence(String text, Language lang, Language motherTongue,
                        Set<String> disabledRules, Set<CategoryId> disabledRuleCategories,
                        Set<String> enabledRules, Set<CategoryId> enabledRuleCategories) {
     this.text = Objects.requireNonNull(text);
@@ -50,11 +50,6 @@ class InputSentence {
     this.enabledRuleCategories = enabledRuleCategories;
   }
 
-  /** @since 4.1 */
-  public String getText() {
-    return text;
-  }
-  
   @Override
   public boolean equals(Object o) {
     if (o == null) return false;
@@ -74,9 +69,5 @@ class InputSentence {
   public int hashCode() {
     return Objects.hash(text, lang, motherTongue, disabledRules, disabledRuleCategories, enabledRules, enabledRuleCategories);
   }
-
-  @Override
-  public String toString() {
-    return text;
-  }
+  
 }

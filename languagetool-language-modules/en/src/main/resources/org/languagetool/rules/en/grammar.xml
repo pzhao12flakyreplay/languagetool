@@ -4270,19 +4270,6 @@ USA
             <message>Did you mean <suggestion><match no="1" postag="VB.*">elude</match></suggestion>?</message>
             <example correction="elude">Her failure to <marker>allude</marker> the school bullies is evident.</example>
         </rule>
-        <rule id="COMPLAINT_COMPLIANT" name="complaint (compliant) with">
-            <pattern>
-                <token regexp="yes" inflected="yes">be|not</token>
-                <token min="0" postag="RB"></token>
-                <marker>
-                    <token>complaint</token>
-                </marker>
-                <token>with</token>
-            </pattern>
-            <message>Did you mean <suggestion>compliant</suggestion> (= in agreement with rules, standards, or requirements)?</message>
-            <example correction="compliant">If the rules are not fully <marker>complaint</marker> with the specification, post them here.</example>
-            <example correction="compliant">Any law that is enacted today must be <marker>complaint</marker> with the fundamental rights chapter of the Constitution.</example>
-        </rule>
         <!-- baited breath::word=bated breath::pivots=baited,bated::options=baited,bated -->
         <rule id="BAITED_BREATH" name="baited (bated) breath">
             <pattern>
@@ -4457,7 +4444,7 @@ USA
         <!-- am loathe to::word=am loath to::pivots=loathe,loath::options=loathe,loath -->
         <rule id="AM_LOATHE_TO" name="am loathe (loath) to">
             <pattern>
-                <token inflected="yes">be</token>
+                <token regexp="yes">a(?:m|re)|be|is|w(?:as|ere)</token>
                 <token>loathe</token>
                 <token>to</token>
             </pattern>
@@ -4508,7 +4495,7 @@ USA
         <!-- at the reigns::word=at the reins::pivots=reigns,reins::options=reigns,reins -->
         <rule id="AT_THE_REIGNS" name="at the reigns (reins)">
             <pattern>
-                <token regexp="yes">at|hand|held|holds?|holding</token>
+                <token regexp="yes">at|hand|held|hold|holding|holds</token>
                 <token>the</token>
                 <token>reigns</token>
             </pattern>
@@ -6287,33 +6274,6 @@ USA
             <message>Did you mean <suggestion>safe to \4</suggestion>?</message>
             <example correction="safe to ignore">It is <marker>save to ignore</marker> trivial code when writing unit tests.</example>
         </rule>
-        <rulegroup id="TOME_TIME" name="tome (time)">
-            <rule>
-                <pattern>
-                    <token inflected='yes' regexp='yes' skip="1">have|spare|take|all<exception scope="next">another</exception></token>
-                    <marker>
-                        <token>tome</token>
-                    </marker>
-                </pattern>
-                <message>Did you mean <suggestion>time</suggestion>?</message>
-                <short>Commonly confused word</short>
-                <example correction='time'>I have no <marker>tome</marker>.</example>
-                <example correction='time'>This will take some <marker>tome</marker>.</example>
-                <example>Now I have another tome to add to the stack.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <token inflected='yes' regexp='yes'>be|find</token>
-                    <marker>
-                        <token>tome</token>
-                    </marker>
-                    <token>to</token>
-                </pattern>
-                <message>Did you mean <suggestion>time</suggestion>?</message>
-                <short>Commonly confused word</short>
-                <example correction='time'>I found <marker>tome</marker> to read.</example>
-            </rule>
-        </rulegroup>
         <rule id="SAVE_SAFE" name="save (safe)">
             <antipattern>
                 <token>such</token>
@@ -7058,9 +7018,9 @@ USA
             <pattern>
                 <token>some</token>
                 <marker>
-                    <token postag_regexp="yes" postag="NN(:UN)?"><exception postag="NNS"/></token>
+                    <token postag_regexp="yes" postag="NN(:UN)?"><exception postag="NNS"/><exception>time</exception></token>
                 </marker>
-                <token postag="VBP"><exception postag="NN:UN"/><exception>off</exception></token>
+                <token postag="VBP"><exception postag="NN:UN"/></token>
             </pattern>
             <message>Did you mean <suggestion><match no="2" postag="NN:UN|NN" postag_regexp="yes" postag_replace="NNS"/></suggestion>?</message>
             <example correction="languages">I think some <marker>language</marker> are more complicated than others.</example>
@@ -7069,7 +7029,6 @@ USA
             <example>If some <marker>can</marker> contains oily water, check the pump for leaks.</example>
             <example>This <marker>can</marker> is dirty.</example>
             <example>I had to take some <marker>time</marker> off.</example>
-            <example>Cheering crowds took to the streets on Sunday night, some set off fireworks.</example>
         </rule>
         <rule id="IS_CAUSE_BY" name="is cause (caused) by">
             <pattern>
@@ -9109,7 +9068,7 @@ USA
                 <message>Possible agreement error. You should probably use: <suggestion><match no="2" postag="VBP" case_conversion="startupper"/> \3</suggestion> or <suggestion>\2 <match no="3" postag="VBP"/></suggestion>.</message>
                 <short>Possible agreement error</short>
                 <example correction="Cat sleeps|Cats sleep"><marker>Cats sleeps</marker> more than 15 hours per day.</example>
-                <example correction="Do dogs|Does dog"><marker>Does dogs</marker> sleep more than 15 hours per day?</example>
+                <example correction="Do dogs|Does dog"><marker>Does dogs</marker> sleep more than 15 hours per day?.</example>
                 <example>AIDS means "Acquired Immune Deficiency Syndrome".</example>
             </rule>
             <rule>
@@ -11409,7 +11368,7 @@ USA
             <pattern>
                 <marker>
                     <token postag='(?:JJ|RB)S?' postag_regexp='yes'>
-                      <exception regexp='yes'>more|less|rather|other(?:wise)?|different</exception>
+                      <exception regexp='yes'>more|less|rather|other</exception>
                       <exception postag='JJR|RBR' postag_regexp='yes'/></token>
                 </marker>
                 <token>than</token>
@@ -11430,7 +11389,6 @@ USA
             <example>...t his use of the term science carries a different meaning than that covered by the term "scientific method"...</example>
             <example>...don't think that there is any better way to learn English than by living in America.</example>
             <!--example>No sooner had I sat down and relaxed than the phone rang.</example> XXX this is missing a comma -->
-            <!--example>...to no-kin, to friends than to strangers, to those <marker>attractive than</marker> to those unattractive, to non-competitors th...</example> XXX doesn't account for skipped words (rather) -->
         </rule>
         <rule id="THE_WORSE_OF" name="THE + RELATIVE + OF, e.g. the worse (worst) of">
         <!-- Created by Tiago F. Santos, 2018-02-02 -->
@@ -12333,7 +12291,7 @@ USA
                 <example>He rebounded from his Wimbledon <marker>defeat</marker> by winning the US Open.</example><!-- The chunker identifies 'his' as B-NP-plural and 'lecture' as E-NP-plural. -->
                 <example>The amendment became part of the Republican / Unionist <marker>platform</marker> in the election of 1864.</example>
                 <example>The amendment became part of the Republican/Unionist <marker>platform</marker> in the election of 1864.</example>
-                <example>… by Muslims, including "Subhan-Allah" (<marker>Holiness</marker> be to God).</example><!-- The text is correct English (subjunctive 'be'). Unlike the example below, it does not trigger an error, because rules in the disambiguator rulegroup QUOT treat curly quotes and straight quotes differently.  -->
+                <example>… by Muslims, including "Subhan-Allah" (<marker>Holiness</marker> be to God).</example><!-- The text is correct English (subjunctive 'be'). Unlike the example below, it does not trigger an error, because rules in the the disambiguator rulegroup QUOT treat curly quotes and straight quotes differently.  -->
                 <example type="triggers_error">… by Muslims, including “Subhan-Allah” (<marker>Holiness</marker> be to God).</example>
                 <example type="triggers_error">We elected Jeffrey <marker>captain</marker> of our team.</example>
                 <example type="triggers_error">FBI <marker>file</marker> on Albert Einstein</example>
@@ -16094,162 +16052,6 @@ USA
       <message>The usual collocation for "\1" is "to" not "\3" with. Did you mean <suggestion>\1 \2 to \4 \5</suggestion>.</message>
       <example correction='brought them to the airport'>Friday came fast and the couple quitted their sweet house for took the bus who will <marker>brought them in the airport</marker>.</example>
     </rule>
-    <rule id="CURATOR_OF" name="curator on/of">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token regexp='yes'>curators?</token>
-          <token>on</token>
-          <token>the</token>
-          <token/>
-      </pattern>
-      <message>The usual collocation for "curator" is "of" not "\2". Did you mean <suggestion>\1 of \3 \4</suggestion>.</message>
-      <example correction='curator of the exposition'>The man to whom you were speaking to was the <marker>curator on the exposition</marker>.</example>
-    </rule>
-    <rule id="CLOSER_FROM" name="closer from/to">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token regexp="yes">closer|near</token>
-          <token>from</token>
-          <token/>
-      </pattern>
-      <message>The usual collocation for "\1" is "to" not "from". Did you mean simply <suggestion>\1 to</suggestion> or <suggestion>further from</suggestion>.</message>
-      <example correction='closer to|further from'>I moved in July to be <marker>closer from school</marker>.</example>
-    </rule>
-    <rule id="A_MY" name="article + possessive form">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern case_sensitive="yes">
-          <token postag="DT">
-            <exception regexp="yes">neither|either|that|all|much</exception></token>
-          <token postag="PRP$">
-            <exception regexp="yes">My|Your|Our|His|Her|Their</exception></token>
-          <token/>
-      </pattern>
-      <message>A determiner cannot combine with a possessive pronoun.  Did you mean simply <suggestion>\2 \3</suggestion> or <suggestion>\1 \3</suggestion>.</message>
-      <example correction='Mine car|The car'><marker>The mine car</marker> is on the maintenance services.</example>
-    </rule>
-    <rule id="ENROLLED_IN_FOR" name="I enrolled international school">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token postag="PRP"/>
-          <token>enrolled</token>
-          <token postag="IN">
-            <exception regexp='yes'>in|for</exception></token>
-      </pattern>
-      <message>The usual collocation for "\2" is "in" (a school) or "for" (a course). Did you mean <suggestion>\1 \2 in</suggestion> or <suggestion>\1 \2 for</suggestion>.</message>
-      <example correction='He enrolled in|He enrolled for'><marker>He enrolled at</marker> the college.</example>
-    </rule>
-    <rule id="STEPS_TO_DO" name="steps to do/take">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token inflected="yes">step</token>
-          <token>to</token>
-          <token>do</token>
-      </pattern>
-      <message>The usual collocation for "\1" is "take". Did you mean <suggestion>\1 \2 take</suggestion>.</message>
-      <example correction='steps to take'>There are some <marker>steps to do</marker>.</example>
-    </rule>
-    <rule id="GOING_TO_VACATION" name="going on vacation">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token inflected="yes">go</token>
-          <token>to</token>
-          <token regexp="yes">vacation|holiday</token>
-      </pattern>
-      <message>The usual collocation for "\3" is "on." Did you mean <suggestion>\1 on \3</suggestion>.</message>
-      <example correction='going on vacation'>She is <marker>going to vacation</marker>.</example>
-    </rule>
-    <rule id="IN_FACEBOOK" name="I came by plane">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token>in</token>
-          <token regexp="yes">Facebook|Twitter|Pinterest|Wikipedia|Amazon|LinkedIn|Yahoo|Blogger</token>
-      </pattern>
-      <message>The usual collocation for "\2" is "on". Did you mean <suggestion>on \2</suggestion>.</message>
-      <example correction='on Wikipedia'>Check it <marker>in Wikipedia</marker>.</example>
-    </rule>
-    <rule id="WRITE_IN_MY_OWN_PAGE" name="Write on my page">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token inflected="yes">write</token>
-          <token min='0' skip='1'>
-            <exception regexp='yes'>on|in</exception></token>
-          <token>in</token>
-          <token min='0' postag_regexp="yes" postag="PRP\$|DT"/>
-          <token min='0'>own</token>
-          <token regexp="yes">(?:page|blog|webpage|wall)s?</token>
-      </pattern>
-      <message>The usual collocation for "\1" is "on". Did you mean <suggestion>\1 <match no='2' include_skipped='all'/> on <match no='4' include_skipped='all'/> <match no='5' include_skipped='all'/> <match no='6' include_skipped='all'/></suggestion>.</message>
-      <example correction='written on page'>That is <marker>written in page</marker> 21.</example>
-      <example correction='written on my own page'>That is <marker>written in my own page</marker>.</example>
-      <example correction='Write that on my own page'><marker>Write that in my own page</marker>.</example>
-      <example correction='Write that piece on my own page'><marker>Write that piece in my own page</marker>.</example>
-    </rule>
-    <rule id="COME_TO_PLANE" name="came to/by">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token postag="PRP"/>
-          <token inflected="yes">come</token>
-          <token>to</token>
-          <token regexp="yes">plane|train|bus|car|metro|subway|airplane|bike|motorcycle</token>
-      </pattern>
-      <message>The usual collocation for "\2" is "by." Did you mean <suggestion>\1 \2 by \4</suggestion>.</message>
-      <example correction='I came by plane'><marker>I came to plane</marker>.</example>
-    </rule>
-    <rule id="THAT_I_WORK_FOR" name="work (for) is">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token postag="DT"/>
-          <token regexp="yes">company|person|guy|man|firm</token>
-          <token regexp="yes">that|which|who</token>
-          <token postag="PRP"/>
-          <token inflected="yes">work</token>
-          <token inflected="yes">be</token>
-      </pattern>
-      <message>You are missing the word 'for' between "\5" and '\6'. Did you mean <suggestion>\1 \2 that \4 \5 for \6</suggestion>.</message>
-      <example correction='The company that I work for is'><marker>The company that I work is</marker> Cosme Inc...</example>
-    </rule>
-    <rule id="WAITING_MY_PATIENT" name="waiting (for) a patient" default='off'>
-      <!-- works better with multiword chinking, if adverbial expressions are added to the database -->
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token inflected="yes">wait</token>
-          <token postag="PRP$|DT" postag_regexp='yes'/>
-          <token postag_regexp="yes" postag="NN.*"/>
-      </pattern>
-      <message>You are missing the word 'for' between "\1" and "\1 \2". Did you mean <suggestion>\1 for \2 \3</suggestion>.</message>
-      <example correction='waiting for her patient'>Anne is <marker>waiting her patient</marker>.</example>
-    </rule>
-    <rule id="TRAVELED_FOR" name="travel (for) X days">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token postag="PRP"/>
-          <token regexp="yes">travell?ed</token>
-          <token postag="CD"/>
-          <token regexp="yes">(?:hour|day|week|month|year|session|semester|term|course)s?</token>
-      </pattern>
-      <message>You are missing the word "for" between "\2" and "\3". Did you mean <suggestion>\1 traveled for \3 \4</suggestion>.</message>
-      <example correction='I traveled for four days'><marker>I traveled four days</marker>.</example>
-    </rule>
-    <rule id="RESPECTFUL_AGAINST" name="Respectful against/toward">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token regexp="yes">(?:dis)?respectful</token>
-          <token>against</token>
-      </pattern>
-      <message>The usual collocation for "\1" is 'toward' but never 'toward'. Did you mean <suggestion>\1 toward</suggestion>.</message>
-      <example correction='Respectful toward'><marker>Respectful against</marker>.</example>
-    </rule>
-    <rule id="DISAPPOINTED_OF" name="Disappointed with, at, or by">
-    <!-- Created by Nicholas Walker (Bokomaru), 2017-11-14 -->
-      <pattern>
-          <token>disappointed</token>
-          <token>of</token>
-      </pattern>
-      <message>The usual collocation for 'disappointed' is 'with', 'at', of 'by, but never "of". Did you mean <suggestion>\1 with</suggestion>.</message>
-        <suggestion>\1 at</suggestion>
-        <suggestion>\1 by</suggestion>
-      <example correction='disappointed with|disappointed at|disappointed by'>We could be <marker>disappointed of</marker> this announcement.</example>
-    </rule>
   </rulegroup>
 
   <rulegroup id="RETURN_IN_THE" name="return in/to">
@@ -16257,8 +16059,7 @@ USA
     <rule>
       <pattern>
         <marker>
-          <token inflected="yes">return
-            <exception>returner</exception></token>
+          <token inflected="yes">return</token>
           <token regexp="yes">in|at</token>
         </marker>
           <token>the</token>
@@ -16270,8 +16071,7 @@ USA
     <rule>
       <pattern>
         <marker>
-          <token inflected="yes">return
-            <exception>returner</exception></token>
+          <token inflected="yes">return</token>
           <token regexp="yes">in|at</token>
         </marker>
           <token postag="NNP">
@@ -16894,7 +16694,7 @@ USA
                     <token case_sensitive="yes" regexp="yes">s?he|it|you|they|we|I</token>
                     <token postag="SENT_END">?</token>
                 </pattern>
-                <message>A comma should precede the tag question (i.e., the yes/no-question at the end).</message>
+                <message>A comma shold precede the tag question (i.e., the yes/no-question at the end).</message>
                 <suggestion>\1,</suggestion>
                 <url>https://www.thoughtco.com/tag-question-grammar-1692523</url>
                 <example correction="coming,">She isn't <marker>coming</marker> is she?</example>
@@ -17125,7 +16925,7 @@ USA
                 <message>The comma is missing here:<suggestion>e.g.,</suggestion>.</message>
                 <short>Punctuation error</short>
                 <example>There are several grammar checkers for English, e.g., LanguageTool.</example>
-                <example correction="e.g.,">There are several grammar checkers for English, <marker>e.g.</marker> LanguageTool.</example>
+                <example correction="e.g.,">The are several grammar checkers for English, <marker>e.g.</marker> LanguageTool.</example>
             </rule>
             <rule>
                 <pattern>
@@ -17137,7 +16937,7 @@ USA
                 <message>A comma and a dot are missing here: <suggestion>e.g.,</suggestion>.</message>
                 <short>Punctuation error</short>
                 <example>There are several grammar checkers for English, e.g., LanguageTool.</example>
-                <example correction="e.g.,">There are several grammar checkers for English, <marker>eg</marker> LanguageTool.</example>
+                <example correction="e.g.,">The are several grammar checkers for English, <marker>eg</marker> LanguageTool.</example>
             </rule>
             <rule>
                 <pattern>
@@ -17150,7 +16950,7 @@ USA
                 <message>A comma and a dot are missing here: <suggestion>e.g.,</suggestion>.</message>
                 <short>Punctuation error</short>
                 <example>There are several grammar checkers for English, e.g., LanguageTool.</example>
-                <example correction="e.g.,">There are several grammar checkers for English, <marker>eg.</marker> LanguageTool.</example>
+                <example correction="e.g.,">The are several grammar checkers for English, <marker>eg.</marker> LanguageTool.</example>
             </rule>
         </rulegroup>
         <rulegroup default="off" id="IE_NO_COMMA" name="'i.e.' without a comma">
@@ -17214,8 +17014,8 @@ USA
                 </pattern>
                 <message>There should be no space here: <suggestion>e.g.</suggestion>.</message>
                 <short>Punctuation error</short>
-                <example>There are several grammar checkers for English, e.g., LanguageTool.</example>
-                <example correction="e.g.">There are several grammar checkers for English, <marker>e. g.</marker> LanguageTool.</example>
+                <example>The are several grammar checkers for English, e.g., LanguageTool.</example>
+                <example correction="e.g.">The are several grammar checkers for English, <marker>e. g.</marker> LanguageTool.</example>
                 <example>E. G. Erdos, L. E. Boggs, C. D. Mackey</example>
             </rule>
             <rule>
@@ -19972,7 +19772,7 @@ USA
                 </marker>
                 <token regexp='yes'>behaviou?rs?|drugs?|games?|opiods?|painkillers?|substances?</token>
             </pattern>
-            <message>Did you mean the adjective <suggestion>addictive</suggestion> instead of the verb form 'addicting'?</message>
+            <message>Did you mean the adjective <suggestion>addictive</suggestion> instead of the verb form 'addiciting'?</message>
             <example correction="addictive">Nicotine is the <marker>addicting</marker> drug in tobacco.</example>
         </rule>
         <rule id="DEEP_SEEDED" name="deep-seeded (deep-seated)">
@@ -21365,14 +21165,6 @@ USA
                 <example>Faulty meters stop working over time.</example>
             </rule>
         </rulegroup>
-        <rule id="BAR_B_QUE" name="bar-b-queue instead of 'bar-b-que'">
-            <pattern>
-                <token regexp="yes">bar-b-queues?</token>
-            </pattern>
-            <message>Did you mean <suggestion><match no="1" regexp_match="ueue" regexp_replace="ue"/></suggestion>?</message>
-            <url>http://www.dictionary.com/browse/bar-b-que</url>
-            <example correction="bar-b-que">A casual summer <marker>bar-b-queue</marker>.</example>
-        </rule>
     </category>
 
     <!-- ====================================================================== -->
@@ -22465,7 +22257,7 @@ USA
             <token>proximity</token>
             <token>to</token>
         </pattern>
-        <message>This is verbose. Consider writing: <suggestion>close to</suggestion>.</message>
+        <message>This is verbose. Cosider writing: <suggestion>close to</suggestion>.</message>
         <short>Redundant phrase</short>
         <example correction="close to">The majority of Jannali's enterprises are located <marker>within close proximity to</marker> the suburb's railway station.</example>
         </rule>
@@ -23833,7 +23625,7 @@ USA
                 </pattern>
                 <message>Capitalize <suggestion>The</suggestion>, if it refers to 'The Hague' (city on the western coast of the Netherlands)</message>
                 <example correction="The">Some of the most prosperous neighbourhoods of the Netherlands can be found in <marker>the</marker>  Hague.</example>
-                <example>When did <marker>the Hague</marker> Congress take place?</example>
+                <example>When did <marker>the Hague</marker> Congress thake place?.</example>
             </rule>
         </rulegroup>
         <rule id="ALSO_SENT_END" name="'also' at the end of the sentence">

@@ -8,8 +8,6 @@
 		java -jar saxon8.jar false-friends.xml print-ff.xsl
 		
 	-->
-	<xsl:param name="lang" select="'all'" />
-
 	<xsl:output method="html" encoding="UTF-8" indent="no" />
 
 	<xsl:template match="text()" />
@@ -39,9 +37,7 @@
 	</xsl:template>
 
 	<xsl:template match="//rule">
-		<xsl:if test="$lang='all' or pattern[@lang=$lang] or translation[@lang=$lang]">
-			<xsl:apply-templates select="*"/>
-		</xsl:if>
+		<xsl:apply-templates select="*"/>
 	</xsl:template>
 	
 	<xsl:template match="translation">

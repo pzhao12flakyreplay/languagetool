@@ -405,4 +405,3 @@ Soirée;Soiree
 Buffet;Büfett
 Casino;Kasino
 Vademecum;Vademekum
-Rechtsprechung;Rechtssprechung

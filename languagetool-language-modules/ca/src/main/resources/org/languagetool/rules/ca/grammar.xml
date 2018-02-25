@@ -33435,27 +33435,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
     <category id="INCORRECT_WORDS_IN_CONTEXT" name="Paraules incorrectes segons el context" type="grammar">
         <!-- #nomenar/anomenar
             (?i)nomen.+ (?i)anomen.+    nom anom    (?i)càrrecs?|senadors?|.*presidents?|diputa.*|.*conseller.*|.*ministre.*|.*director.*|capit.+|.*general.*|vicari.*|rector.*|.*bisbe.*|alcalde.*|batl?le.*|tribunals?|consell|comit[éè]s?|entrenador.*|encarrega[td].*   ddXd,6dDd3d designar per a un càrrec    donar nom -->
-        <rule id="MALEIT" name="maleit/maleït">
-            <pattern>
-                <token regexp="yes">maleits?</token>
-            </pattern>
-            <message>¿Volíeu dir <suggestion><match no="1" regexp_match="(?iu)maleit(s?)" regexp_replace="maleït$1"/></suggestion>? "Maleit" (sense dièresi) és correcte en el sentit de "rabiós".</message>
-            <example correction="maleïts">Estaven <marker>maleits</marker>.</example>
-        </rule>
-        <rule id="BAMBA_VAMBA" name="bamba/vamba">
-            <antipattern>
-                <marker>
-                    <token inflected="yes">coca</token>
-                    <token inflected="yes">bamba</token>
-                </marker>
-            </antipattern>
-            <pattern>
-                <token inflected="yes">bamba</token>
-            </pattern>
-            <message>En el sentit de sabatilla d'esport cal escriure <suggestion><match no="1" postag="(NC.*)" postag_regexp="yes" postag_replace="$1">vamba</match></suggestion>.</message>
-            <example correction="vambes">No he portat les <marker>bambes</marker>.</example>
-            <example>coca bamba i pastissets</example>
-        </rule>
         <rule id="ESTANDARD" name="estandard/estàndard">
             <pattern>
                 <token regexp="yes">estandards?</token>
@@ -43650,13 +43629,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
             <!--<example type="trigers_error">Aquesta sang, baixa en oxigen,</example>-->
         </rule>
         <rule id="DE_MANERA_PERMANENTMENT" name="confusió: de manera permanentment">
-            <antipattern>
-                <marker>
-                    <token inflected="yes" regexp="yes">canviar|mudar</token>
-                    <token>de</token>
-                    <token>forma</token>
-                </marker>
-            </antipattern>
             <pattern>
                 <marker>
                     <token>de</token>
@@ -44220,14 +44192,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                     <token>entre</token>
                 </marker>
             </antipattern>
-            <antipattern>
-                <marker>
-                    <token>diferència</token>
-                    <token>entre</token>
-                </marker>
-            </antipattern>
             <rule>
                 <pattern>
+                    <token><exception inflected="yes">diferència</exception></token>
                     <marker>
                         <token>entre</token>
                         <token postag="DA..P." postag_regexp="yes"></token>
@@ -44238,7 +44205,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                     <token><exception regexp="yes">[.,]|a|en</exception></token>
                 </pattern>
                 <message>Construcció probablement incorrecta.</message>
-                <suggestion>\1 \2 quals</suggestion>
+                <suggestion>\2 \3 quals</suggestion>
                 <short>Reviseu la construcció de relatiu</short>
                 <example correction="entre les quals">Unes obres <marker>entre les que</marker> destaquen les més famoses.</example>
                 <example>Joan està entre els que destaquen.</example>
@@ -44277,27 +44244,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 </pattern>
                 <message>Construcció probablement incorrecta.</message>
                 <suggestion>\1 \2 quals</suggestion>
+                <short>Reviseu la construcció de relatiu</short>
                 <example correction="entre les quals">Unes obres <marker>entre les que</marker> hi havia les seves.</example>
                 <example correction="entre les quals">Unes obres <marker>entre les que</marker> no hi havia les seves.</example>
                 <example>Unes obres entre les quals hi havia les seves.</example>
                 <example>Unes cases entre les que hi havia a la zona.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <marker>
-                        <token>entre</token>
-                        <token regexp="yes">els|les</token>
-                        <token>que</token>
-                    </marker>
-                    <token min="0" max="3" inflected="yes" regexp="yes">caldre|es|haver|de|hi|en|anar</token>
-                    <token inflected="yes" regexp="yes">destacar|incloure|trobar</token>
-                </pattern>
-                <message>Construcció probablement incorrecta.</message>
-                <suggestion>\1 \2 quals</suggestion>
-                <example correction="entre les quals">, <marker>entre les que</marker> s'inclouen</example>
-                <example correction="entre els quals">, <marker>entre els que</marker> s'ha d'incloure</example>
-                <example correction="entre les quals">, <marker>entre les que</marker> cal destacar</example>
-                <example>una gran diferència entre els que es troben per damunt o a prop del camí.</example>
             </rule>
         </rulegroup>
         <rulegroup id="ALTRES_CONSTRUCCIONS_RELATIU" name="Altres construccions de relatiu">

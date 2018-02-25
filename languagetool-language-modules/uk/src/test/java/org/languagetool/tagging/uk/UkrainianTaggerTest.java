@@ -137,12 +137,9 @@ public class UkrainianTaggerTest {
 
   @Test
   public void testDynamicTaggingNums() throws IOException {
-    TestTools.myAssert("100-річному", "100-річному/[100-річний]adj:m:v_dav|100-річному/[100-річний]adj:m:v_mis|100-річному/[100-річний]adj:n:v_dav|100-річному/[100-річний]adj:n:v_mis", tokenizer, tagger);
-    TestTools.myAssert("1-2-відсотковим", "1-2-відсотковим/[1-2-відсотковий]adj:m:v_oru|1-2-відсотковим/[1-2-відсотковий]adj:n:v_oru|1-2-відсотковим/[1-2-відсотковий]adj:p:v_dav", tokenizer, tagger);
-    TestTools.myAssert("10-класників", "10-класників/[10-класник]noun:anim:p:v_rod|10-класників/[10-класник]noun:anim:p:v_zna", tokenizer, tagger);
-    TestTools.myAssert("10-хвилинка", "10-хвилинка/[10-хвилинка]noun:inanim:f:v_naz", tokenizer, tagger);
-    TestTools.myAssert("11-12-річний", "11-12-річний/[11-12-річний]adj:m:v_kly|11-12-річний/[11-12-річний]adj:m:v_naz|11-12-річний/[11-12-річний]adj:m:v_zna:rinanim", tokenizer, tagger);
+    TestTools.myAssert("г-г-г", "г-г-г/[null]null", tokenizer, tagger);
     
+    TestTools.myAssert("100-річному", "100-річному/[100-річний]adj:m:v_dav|100-річному/[100-річний]adj:m:v_mis|100-річному/[100-річний]adj:n:v_dav|100-річному/[100-річний]adj:n:v_mis", tokenizer, tagger);
     TestTools.myAssert("100-й", "100-й/[100-й]adj:f:v_dav:&numr|100-й/[100-й]adj:f:v_mis:&numr|100-й/[100-й]adj:m:v_naz:&numr|100-й/[100-й]adj:m:v_zna:rinanim:&numr", tokenizer, tagger);
     TestTools.myAssert("50-х", "50-х/[50-й]adj:p:v_mis:&numr|50-х/[50-й]adj:p:v_rod:&numr|50-х/[50-й]adj:p:v_zna:ranim:&numr", tokenizer, tagger);
     TestTools.myAssert("11-ту", "11-ту/[11-й]adj:f:v_zna:&numr", tokenizer, tagger);
@@ -203,7 +200,6 @@ public class UkrainianTaggerTest {
   public void testDynamicTaggingPrefixes() throws IOException {
     TestTools.myAssert("VIP–будинок", "VIP–будинок/[VIP-будинок]noun:inanim:m:v_naz|VIP–будинок/[VIP-будинок]noun:inanim:m:v_zna", tokenizer, tagger);
     TestTools.myAssert("PR-департаменту", "PR-департаменту/[PR-департамент]noun:inanim:m:v_dav|PR-департаменту/[PR-департамент]noun:inanim:m:v_mis|PR-департаменту/[PR-департамент]noun:inanim:m:v_rod", tokenizer, tagger);
-    TestTools.myAssert("3D-друк", "3D-друк/[3D-друк]noun:inanim:m:v_naz|3D-друк/[3D-друк]noun:inanim:m:v_zna", tokenizer, tagger);
 //    TestTools.myAssert("POS-термінальна", "", tokenizer, tagger);
 //    TestTools.myAssert("IT-Академії", "IT-Академії/[IT-академія]noun:inanim:f:v_dav|IT-Академії/[IT-академія]noun:inanim:f:v_mis|IT-Академії/[IT-академія]noun:inanim:f:v_rod|IT-Академії/[IT-академія]noun:inanim:p:v_naz|IT-Академії/[IT-академія]noun:inanim:p:v_zna", tokenizer, tagger);
   }
@@ -213,8 +209,8 @@ public class UkrainianTaggerTest {
     TestTools.myAssert("пів-України", "пів-України/[пів-України]noun:inanim:f:v_dav:prop|пів-України/[пів-України]noun:inanim:f:v_mis:prop|пів-України/[пів-України]noun:inanim:f:v_naz:prop"
         +"|пів-України/[пів-України]noun:inanim:f:v_oru:prop|пів-України/[пів-України]noun:inanim:f:v_rod:prop|пів-України/[пів-України]noun:inanim:f:v_zna:prop", tokenizer, tagger);
 
-    TestTools.myAssert("Пенсильванія-авеню", "Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_dav:nv:prop|Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_mis:nv:prop|Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_naz:nv:prop|Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_oru:nv:prop|Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_rod:nv:prop|Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_zna:nv:prop", tokenizer, tagger);
-    TestTools.myAssert("Уолл-стрит", "Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_dav:nv:prop|Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_mis:nv:prop|Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_naz:nv:prop|Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_oru:nv:prop|Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_rod:nv:prop|Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_zna:nv:prop", tokenizer, tagger);
+    TestTools.myAssert("Пенсильванія-авеню", "Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_dav:nv|Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_mis:nv|Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_naz:nv|Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_oru:nv|Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_rod:nv|Пенсильванія-авеню/[Пенсильванія-авеню]noun:inanim:f:v_zna:nv", tokenizer, tagger);
+    TestTools.myAssert("Уолл-стрит", "Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_dav:nv|Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_mis:nv|Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_naz:nv|Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_oru:nv|Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_rod:nv|Уолл-стрит/[Уолл-стрит]noun:inanim:f:v_zna:nv", tokenizer, tagger);
     
 
     // full tag match
@@ -239,7 +235,6 @@ public class UkrainianTaggerTest {
 
     // numr-numr
     TestTools.myAssert("одним-двома", "одним-двома/[один-два]numr:p:v_oru", tokenizer, tagger);
-    TestTools.myAssert("одного-другого", "одного-другого/[одного-другий]adj:m:v_rod:&numr|одного-другого/[одного-другий]adj:m:v_zna:ranim:&numr|одного-другого/[одного-другий]adj:n:v_rod:&numr", tokenizer, tagger);
     //TODO: бере іменник п’ята
 //    TestTools.myAssert("п'яти-шести", "п'яти-шести/[п'ять-шість]numr:v_dav|п'яти-шести/[п'ять-шість]numr:v_mis|п'яти-шести/[п'ять-шість]numr:v_rod", tokenizer, tagger);
     TestTools.myAssert("п'яти-шести", "п'яти-шести/[п'ята-шість]noun:inanim:f:v_rod|п'яти-шести/[п'ята-шість]noun:inanim:p:v_rod|п'яти-шести/[п'ять-шість]numr:p:v_dav|п'яти-шести/[п'ять-шість]numr:p:v_mis|п'яти-шести/[п'ять-шість]numr:p:v_rod", tokenizer, tagger);
@@ -395,33 +390,14 @@ public class UkrainianTaggerTest {
 //    TestTools.myAssert("курей-бройлерів", "кури-бройлери", tokenizer, tagger);
   }
 
-  //TODO:
-//  @Test
-//  public void testTaggingMultidash() throws IOException {
-//    TestTools.myAssert("україно-румуно-болгарський", "", tokenizer, tagger);
-//  TestTools.myAssert("синьо-біло-чорний", "", tokenizer, tagger);
-//  TestTools.myAssert("хіп-хоп-гурту", "", tokenizer, tagger);
-//  }
-
-  @Test
-  public void testDynamicTaggingNoDash() throws IOException {
-    TestTools.myAssert("Лангштрассе", "Лангштрассе/[Лангштрассе]noun:inanim:f:v_dav:nv:prop|Лангштрассе/[Лангштрассе]noun:inanim:f:v_mis:nv:prop"
-        + "|Лангштрассе/[Лангштрассе]noun:inanim:f:v_naz:nv:prop|Лангштрассе/[Лангштрассе]noun:inanim:f:v_oru:nv:prop"
-        + "|Лангштрассе/[Лангштрассе]noun:inanim:f:v_rod:nv:prop|Лангштрассе/[Лангштрассе]noun:inanim:f:v_zna:nv:prop", tokenizer, tagger);
-  }
-
-
   @Test
   public void testDynamicTaggingSkip() throws IOException {
-    TestTools.myAssert("г-г-г", "г-г-г/[null]null", tokenizer, tagger);
     TestTools.myAssert("йо-га", "йо-га/[null]null", tokenizer, tagger);
     TestTools.myAssert("с-г", "с-г/[null]null", tokenizer, tagger);
     TestTools.myAssert("де-куди", "де-куди/[null]null", tokenizer, tagger);
     TestTools.myAssert("чи-то", "чи-то/[null]null", tokenizer, tagger);
 //    TestTools.myAssert("як-то", "як-то/[як-то]conj:subord:bad", tokenizer, tagger);
 
-    TestTools.myAssert("все-транс", "все-транс/[null]null", tokenizer, tagger);
-    TestTools.myAssert("транс-все", "транс-все/[null]null", tokenizer, tagger);
     assertNotTagged("спа-салоне");
 
     

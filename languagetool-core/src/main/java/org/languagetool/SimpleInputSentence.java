@@ -25,19 +25,14 @@ import java.util.Objects;
  * @since 3.7
  */
 @Experimental
-class SimpleInputSentence {
+public class SimpleInputSentence {
 
   private final String text;
   private final Language lang;
   
-  SimpleInputSentence(String text, Language lang) {
+  public SimpleInputSentence(String text, Language lang) {
     this.text = Objects.requireNonNull(text);
     this.lang = Objects.requireNonNull(lang);
-  }
-
-  /** @since 4.1 */
-  public String getText() {
-    return text;
   }
 
   @Override
@@ -54,9 +49,5 @@ class SimpleInputSentence {
   public int hashCode() {
     return Objects.hash(text, lang);
   }
-
-  @Override
-  public String toString() {
-    return text;
-  }
+  
 }

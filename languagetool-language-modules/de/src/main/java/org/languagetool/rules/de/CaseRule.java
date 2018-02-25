@@ -109,7 +109,7 @@ public class CaseRule extends Rule {
     ),
     Arrays.asList(
       regex("Vereinigte[ns]?"),
-      regex("Staaten|Königreiche?s?|Bühnen")
+      regex("Staaten|Königreiche?s?")
     ),
     Arrays.asList(
       csToken("Den"),
@@ -169,7 +169,7 @@ public class CaseRule extends Rule {
         csToken("das"),
         posRegex("VER:.*"),
         posRegex("VER:AUX:.*"),
-        posRegex("PKT|KON:NEB")
+        pos("PKT")
     ),
     Arrays.asList(
         // um ihren eigenen Glauben an das Gute, Wahre und Schöne zu stärken.
@@ -251,7 +251,7 @@ public class CaseRule extends Rule {
      ),
      Arrays.asList(
        // "Das Aus für Italien kam unerwartet." / "Müller drängt auf Aus bei Pflichtmitgliedschaft"
-       regex("auf|das|vor|a[mn]"),
+       regex("auf|das|vor"),
        csToken("Aus"),
        posRegex("^PRP:.+|VER:[1-3]:.+")
      ),
@@ -269,7 +269,7 @@ public class CaseRule extends Rule {
      Arrays.asList(
        // https://de.wikipedia.org/wiki/Neue_Mittelschule
        regex("Neue[nrs]?"),
-       new PatternTokenBuilder().tokenRegex("Mitte(lschule)?|Rathaus|Testament|Welt|Markt|Rundschau").matchInflectedForms().build()
+       new PatternTokenBuilder().tokenRegex("Mittelschule|Rathaus|Testament|Welt|Markt|Rundschau").matchInflectedForms().build()
      ),
      Arrays.asList( // "Das schließen Forscher aus ..."
        new PatternTokenBuilder().pos(JLanguageTool.SENTENCE_START_TAGNAME).build(),

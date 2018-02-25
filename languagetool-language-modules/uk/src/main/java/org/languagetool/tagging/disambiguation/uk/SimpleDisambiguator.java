@@ -2,7 +2,6 @@ package org.languagetool.tagging.disambiguation.uk;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,16 +30,8 @@ class SimpleDisambiguator {
         
         line = line.replaceFirst(" *#.*", "");
   
-        String[] parts = line.trim().split(" ", 2);
-        
-        String[] matchers = parts[1].split("\\|");
-        List<MatcherEntry> matcherEntries = new ArrayList<>();
-        for (String string : matchers) {
-          String[] matcherParts = string.split(" ");
-          matcherEntries.add(new MatcherEntry(matcherParts[0], matcherParts[1]));
-        }
-        
-        result.put(parts[0], new TokenMatcher(matcherEntries));
+        String[] parts = line.trim().split(" ");
+        result.put(parts[0], new TokenMatcher(parts[1], parts[2]));
       }
       //        System.err.println("Found disambig remove list: " + result.size());
       return result;
@@ -84,11 +75,12 @@ class SimpleDisambiguator {
     }    
   }
 
-  private static class MatcherEntry {
+
+  static class TokenMatcher {
     private final String lemma;
     private final Pattern tagRegex;
 
-    public MatcherEntry(String lemma, String tagRegex) {
+    public TokenMatcher(String lemma, String tagRegex) {
       this.lemma = lemma;
       this.tagRegex = Pattern.compile(tagRegex);
     }
@@ -101,28 +93,7 @@ class SimpleDisambiguator {
 
     @Override
     public String toString() {
-      return "MatcherEntry [lemma=" + lemma + ", tagRegex=" + tagRegex + "]";
-    }
-  }
-
-  static class TokenMatcher {
-    private final List<MatcherEntry> matchers;
-
-    public TokenMatcher(List<MatcherEntry> matchers) {
-      this.matchers = matchers;
-    }
-
-    public boolean matches(AnalyzedToken analyzedToken) {
-      for(MatcherEntry matcher: matchers) {
-        if( matcher.matches(analyzedToken) )
-          return true;
-      }
-      return false;
-    }
-
-    @Override
-    public String toString() {
-      return "TokenMatcher " + matchers;
+      return "TokenMatcher [lemma=" + lemma + ", tagRegex=" + tagRegex + "]";
     }
   }
 

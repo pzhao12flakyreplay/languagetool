@@ -269,7 +269,6 @@ coupé
 coupés
 coupler
 couplers
-coverture
 criticality
 crore
 crores
@@ -1785,6 +1784,3 @@ zettawatts
 zettaweber
 zettawebers
 Zhytomyr
-PHP
-CSS
-JSON
