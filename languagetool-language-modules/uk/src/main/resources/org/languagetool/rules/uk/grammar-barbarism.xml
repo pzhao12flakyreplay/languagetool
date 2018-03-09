@@ -99,7 +99,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token regexp="yes" min="0">би?</token>
           <token postag_regexp="yes" postag="adj.*" min="0"/>
           <token inflected="yes">міра
-            <exception postag_regexp="yes" postag=".*;adv&gt;.*"/>
+            <exception postag="&lt;adv&gt;"/>
           </token>
         </pattern>
         <message>Правильно: <suggestion>вживати заходів</suggestion></message>
@@ -2593,7 +2593,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           </token>
         </pattern>
         <message>На позначення процесу краще вживати: <suggestion><match no="1" postag_regexp="yes" postag="(noun:inanim:.:)(v_...).*" postag_replace="noun:inanim:n:$2.*">перероблювання</match></suggestion></message>
-        <suggestion><match no="1" postag_regexp="yes" postag="(noun:inanim:.:)(v_...)(.*)" postag_replace="noun:inanim:n:$2$3">перероблення</match></suggestion>
+        <suggestion><match no="1" postag_regexp="yes" postag="(noun:inanim:.:)(v_...).*" postag_replace="noun:inanim:n:$2.*">перероблення</match></suggestion>
         <example correction="перероблювання|перероблення">зберігання та <marker>переробки</marker> продукції рослинництва</example>
         <example correction="перероблювання|перероблення">Фахівець із <marker>нафтопереробки</marker>.</example>
         <example correction="Перероблюванням|Переробленням"><marker>Переробкою</marker> нафти займається інша фірма.</example>
@@ -4883,6 +4883,19 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
       <url>http://yak-my-hovorymo.wikidot.com/nahoda-pryhoda</url>
       <example correction="в пригоді">він став йому <marker>в нагоді</marker>.</example>
     </rule>
+
+    <rule id="po_krainiy_miri" name="По крайній мірі">
+      <pattern>
+        <token>по</token>
+        <token>крайній</token>
+        <token>мірі</token>
+      </pattern>
+      <message>Правильно: <suggestion>принаймні</suggestion></message>
+      <suggestion>щонайменше</suggestion>
+      <suggestion>у всякому разі</suggestion>
+      <example correction="принаймні|щонайменше|у всякому разі">і <marker>по крайній мірі</marker> він там жив.</example>
+    </rule>
+
 
 <!--  Too many false positives with надоїти, moved to replace.txt
     <rule id="nadoyisty" name="Надоїсти">
