@@ -11,9 +11,6 @@
   * all-uppercase words are now also spellchecked
 
 #### Esperanto
-  * words written with x-sistemo now get proper POS tag so grammar mistakes can now
-    be found in: ambaux virino (->ambaux virinoj), mi farigxis maljunan (-> mi
-    farigxis maljuna), etc.
   * added and improved rules
   * Added many <url> to rules
   
