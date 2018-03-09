@@ -50,11 +50,6 @@ class InputSentence {
     this.enabledRuleCategories = enabledRuleCategories;
   }
 
-  /** @since 4.1 */
-  public String getText() {
-    return text;
-  }
-  
   @Override
   public boolean equals(Object o) {
     if (o == null) return false;

@@ -2850,7 +2850,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
               <example correction="и в воздухе, и на небе, и в вагоне">Было грустно <marker>и в воздухе и на небе и в вагоне</marker>.</example>
             </rule>
         </rulegroup>
-        <rulegroup default="off" id="PUNKT_KOTORIJ1" name="Пунктуация перед союзами «который», ...(1)">
+        <rulegroup default="off" id="PUNKT_KOTORIJ1" name="Пунктуация перед союзами «который», ...">
         <!-- TODO: Need improve -->    
             <rule>
                 <antipattern>
@@ -2867,7 +2867,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                       <feature id="number"/>
                         <token negate="yes" regexp="yes">[\p{Punct}]|[\p{Digit}]*|-|—|–|’|‘|…|ну|«|большинство|меньшинство|часть|доля<exception postag="SENT_START"></exception><exception postag_regexp="yes" postag="CONJ|ADJ:.*|Num:.*|NumC:.*"></exception><exception>соответствии</exception></token>
                         <unify-ignore>
-                            <token postag="PREP"><exception regexp="yes">из|над</exception></token>
+                            <token postag="PREP"></token>
                         </unify-ignore>
                         <token inflected="yes" skip="-1">который</token>
                      </unify> 
@@ -2890,17 +2890,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
             <rule>
              <antipattern>
                     <token postag_regexp="yes" postag="NN:.*"></token> 
-                    <token regexp="yes" skip="-1">,|;|и</token>   
+                    <token regexp="yes" skip="-1">,|;</token>   
                     <token postag_regexp="yes" postag="NN:.*:.*:.*:Nom"></token>
                     <token inflected="yes">который</token>
                     <token postag="VB:.*|PT:.*" postag_regexp="yes"></token> 
-               </antipattern>
-                <antipattern>
-                    <token postag_regexp="yes" postag="NN:.*" skip="1"></token>   
-                    <token postag_regexp="yes" postag="NN:.*"></token>
-                    <token inflected="yes">который</token>
-                    <token postag="VB:.*|PT:.*" postag_regexp="yes"></token> 
-               </antipattern>  
+               </antipattern> 
                <pattern case_sensitive="yes">
                    <token><exception postag="PREP|ADJ:.*" postag_regexp="yes"></exception><exception regexp="yes">соответствии|большинство|меньшинство|часть|доля</exception></token>
                     <marker>
@@ -2921,7 +2915,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <example>Ребёнок, родители которого играли в футбол, будет футболистом.</example>
                 <example>Они совершили экскурсию в королевскую резиденцию — Букингемский дворец, часть помещений которого открыта для посетителей обычно один месяц в году.</example>
                 <example>Который час?</example>
-                <example>На территории распространения которого расположен город.</example>
                 <example>Бухта Золотой Рог, на обоих берегах которой располагается Владивосток, является удобным местом.</example>
                 <example correction="ребята, которые">Это те же <marker>ребята которые</marker> играли в хоккей.</example>
             </rule>
