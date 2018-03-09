@@ -11,9 +11,15 @@
   * all-uppercase words are now also spellchecked
 
 #### Esperanto
+  * words written with x-sistemo now get proper POS tag so grammar mistakes can now
+    be found in: ambaux virino (->ambaux virinoj), mi farigxis maljunan (-> mi
+    farigxis maljuna), etc.
   * added and improved rules
   * Added many <url> to rules
   
+#### French
+  * improved suggestion for spelling mistakes (#912)
+
 #### German
   * added and improved rules
   * New rule that checks coherent use of Du/du, Dich/dich etc. Assumes that the first
